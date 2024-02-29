@@ -1,17 +1,21 @@
 package com.curso.vnc.services.impl;
 
+import java.lang.reflect.Constructor;
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.curso.vnc.services.interfaces.GenericService;
 
-public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>> implements GenericService<T> {
-
+public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> implements GenericService<T, DTO> {
+	
+	protected DTO typeDto;
 	protected final R repository;
 
-	public GenericServiceImpl(R repository) {
+	public GenericServiceImpl(R repository, DTO typeDto) {
 		this.repository = repository;
+		this.typeDto = typeDto;
 	}
 
 	@Override
@@ -21,9 +25,10 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>> implemen
 	}
 
 	@Override
-	public T buscarPorId(Integer id) {
-		var obj =repository.getReferenceById(id);
-		return obj;
+	public DTO buscarPorId(Integer id) {
+		var obj = repository.findById(id);
+		BeanUtils.copyProperties(obj.get(), typeDto);
+		return typeDto;
 	}
 
 	@Override
@@ -37,5 +42,9 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>> implemen
 		return objs;
 	}
 	
-	
+    private DTO convertToDto(T entity) {
+        BeanUtils.copyProperties(entity, typeDto);
+        return typeDto;
+    }
+
 }

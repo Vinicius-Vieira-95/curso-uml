@@ -27,7 +27,7 @@ public class CategoriaController {
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Categoria> buscar(@PathVariable Integer id) {
+	public ResponseEntity<?> buscar(@PathVariable Integer id) {
 		var cat = service.buscarPorId(id);
 		return ResponseEntity.ok().body(cat);
 	}
