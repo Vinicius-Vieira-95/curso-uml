@@ -1,34 +1,31 @@
 package com.curso.vnc.services.impl;
 
-import java.lang.reflect.Constructor;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.curso.vnc.services.interfaces.GenericService;
 
 public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> implements GenericService<T, DTO> {
-	
+
+	protected final ModelMapper mapper;
 	protected DTO typeDto;
 	protected final R repository;
 
-	public GenericServiceImpl(R repository, DTO typeDto) {
+	protected final Class<DTO> dtoClass;
+
+	public GenericServiceImpl(R repository, ModelMapper mapper, Class<DTO> dtoClass) {
+		this.mapper = mapper;
 		this.repository = repository;
-		this.typeDto = typeDto;
+		this.dtoClass = dtoClass;
 	}
 
 	@Override
 	public T inserir(T entity) {
 		repository.save(entity);
 		return null;
-	}
-
-	@Override
-	public DTO buscarPorId(Integer id) {
-		var obj = repository.findById(id);
-		BeanUtils.copyProperties(obj.get(), typeDto);
-		return typeDto;
 	}
 
 	@Override
@@ -42,9 +39,15 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 		return objs;
 	}
 	
-    private DTO convertToDto(T entity) {
-        BeanUtils.copyProperties(entity, typeDto);
-        return typeDto;
+	@Override
+	public DTO buscarPorId(Integer id) {
+        var cat = repository.findById(id);
+        if (cat.isPresent()) {
+            T entity = cat.get();
+            return mapper.map(entity, dtoClass);
+        } else {
+            return null; // ou lança uma exceção de acordo com sua lógica de negócio
+        }
     }
 
 }

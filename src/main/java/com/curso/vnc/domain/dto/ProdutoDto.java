@@ -7,6 +7,9 @@ public class ProdutoDto {
 	private String nome;
 	private Double preco;
 	
+	public ProdutoDto() {
+	}
+
 	ProdutoDto(Produto entity){
 		this.nome = entity.getNome();
 		this.preco = entity.getPreco();
@@ -24,6 +27,4 @@ public class ProdutoDto {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-	
-	
 }
