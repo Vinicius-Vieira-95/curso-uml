@@ -3,7 +3,6 @@ package com.curso.vnc.services.impl;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.curso.vnc.services.interfaces.GenericService;

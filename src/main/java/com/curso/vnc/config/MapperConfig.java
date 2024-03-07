@@ -16,7 +16,7 @@ public class MapperConfig {
 	ModelMapper mapper() {
 		var mapper = new ModelMapper();
 		mapper.createTypeMap(Categoria.class, CategoriaDto.class);
-		
+		//mapeamento caso alguns nome de atributos das classes não batem
 		//.addMapping(Categoria::getProdutos, CategoriaDto::setProdutos);
 		
 		mapper.createTypeMap(Produto.class, ProdutoDto.class);
