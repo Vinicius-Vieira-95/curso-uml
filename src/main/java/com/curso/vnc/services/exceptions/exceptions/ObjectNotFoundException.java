@@ -1,4 +1,4 @@
-package com.curso.vnc.services.exceptions;
+package com.curso.vnc.services.exceptions.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException{
 
@@ -6,6 +6,10 @@ public class ObjectNotFoundException extends RuntimeException{
 	
 	public ObjectNotFoundException(String mgs) {
 		super(mgs);
+	}
+	
+	public ObjectNotFoundException(String msg , Throwable cause) {
+		super(msg, cause);
 	}
 
 }

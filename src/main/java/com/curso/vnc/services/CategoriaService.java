@@ -1,22 +1,17 @@
 package com.curso.vnc.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import com.curso.vnc.domain.Categoria;
+import com.curso.vnc.domain.dto.CategoriaDto;
 import com.curso.vnc.repositories.CategoriaRepository;
-import com.curso.vnc.services.exceptions.ObjectNotFoundException;
+import com.curso.vnc.services.impl.GenericServiceImpl;
 
 @Service
-public class CategoriaService {
+public class CategoriaService extends GenericServiceImpl<Categoria, CategoriaRepository, CategoriaDto>{
 
-	@Autowired
-	private CategoriaRepository repository;
-	
-	
-	public Categoria buscar(Integer id) {
-		var categoria = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
-		return categoria;
+	public CategoriaService(CategoriaRepository repository, ModelMapper mapper) {
+		super(repository, mapper, CategoriaDto.class);
 	}
-	
 }
