@@ -5,6 +5,7 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.curso.vnc.services.exceptions.exceptions.ObjectNotFoundException;
 import com.curso.vnc.services.interfaces.GenericService;
 
 public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> implements GenericService<T, DTO> {
@@ -37,16 +38,11 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 		var objs = repository.findAll();
 		return objs;
 	}
-	
+
 	@Override
 	public DTO buscarPorId(Integer id) {
-        var cat = repository.findById(id);
-        if (cat.isPresent()) {
-            T entity = cat.get();
-            return mapper.map(entity, dtoClass);
-        } else {
-            return null; // ou lança uma exceção de acordo com sua lógica de negócio
-        }
-    }
+		var cat = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Classe não encontrada, objeto retornando nulo"));
+		return mapper.map(cat, dtoClass);
+	}
 
 }
