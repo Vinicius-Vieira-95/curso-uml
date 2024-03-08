@@ -8,8 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.curso.vnc.domain.Categoria;
+import com.curso.vnc.domain.Cidade;
+import com.curso.vnc.domain.Estado;
 import com.curso.vnc.domain.Produto;
 import com.curso.vnc.repositories.CategoriaRepository;
+import com.curso.vnc.repositories.CidadeRepository;
+import com.curso.vnc.repositories.EstadoRepository;
 import com.curso.vnc.repositories.ProdutoRepository;
 
 @SpringBootApplication
@@ -20,7 +24,13 @@ public class CursoUmlApplication implements CommandLineRunner {
 
 	@Autowired
 	private ProdutoRepository repo2;
-
+	
+	@Autowired
+	private EstadoRepository estadoRepository;
+	
+	@Autowired
+	private CidadeRepository cidadeRepository;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(CursoUmlApplication.class, args);
 	}
@@ -47,5 +57,18 @@ public class CursoUmlApplication implements CommandLineRunner {
 
 		repo1.saveAll(Arrays.asList(cat1, cat2));
 		repo2.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+		
+		Estado est1 = new Estado(null, "Ceará");
+		Estado est2 = new Estado(null, "São Paulo");
+
+		Cidade c1 = new Cidade(null, "Fortaleza", est1);
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 = new Cidade(null, "Campinas", est2);
+
+		est1.getCidades().addAll(Arrays.asList(c1));
+		est2.getCidades().addAll(Arrays.asList(c2, c3));
+		
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 	}
 }
