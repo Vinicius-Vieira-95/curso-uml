@@ -1,5 +1,6 @@
 package com.curso.vnc;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.curso.vnc.domain.Categoria;
 import com.curso.vnc.domain.Cidade;
+import com.curso.vnc.domain.Cliente;
+import com.curso.vnc.domain.Endereco;
 import com.curso.vnc.domain.Estado;
 import com.curso.vnc.domain.Produto;
+import com.curso.vnc.domain.enums.TipoCliente;
 import com.curso.vnc.repositories.CategoriaRepository;
 import com.curso.vnc.repositories.CidadeRepository;
+import com.curso.vnc.repositories.ClienteRepository;
+import com.curso.vnc.repositories.EnderecoRepository;
 import com.curso.vnc.repositories.EstadoRepository;
 import com.curso.vnc.repositories.ProdutoRepository;
 
@@ -30,6 +36,12 @@ public class CursoUmlApplication implements CommandLineRunner {
 	
 	@Autowired
 	private CidadeRepository cidadeRepository;
+	
+	@Autowired
+	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursoUmlApplication.class, args);
@@ -70,5 +82,23 @@ public class CursoUmlApplication implements CommandLineRunner {
 		
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
+		
+		Cliente cl1 = new Cliente(null, "Marisa Silva", "mariasilva@gmail.com", "111111111-11", TipoCliente.PESSOAFISICA);
+		Cliente cl2 = new Cliente(null, "João Marcos", "joaoa@gmail.com", "222222222-11", TipoCliente.PESSOAFISICA);
+		Cliente cl3 = new Cliente(null, "Ana Cecilia Dantas", "ana@gmail.com", "333333333-33", TipoCliente.PESSOAJURIDICA);
+		
+		cl1.getTelefones().addAll(Arrays.asList("123456759", "99988877754"));
+		cl2.getTelefones().addAll(Arrays.asList("987654321", "88855557754"));
+		cl3.getTelefones().addAll(Arrays.asList("123456759"));
+		
+		Endereco e1 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl1, c1);
+		Endereco e2 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl2, c2);
+		Endereco e3 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl2, c3);
+		
+		cl1.getEnderecos().addAll(Arrays.asList(e1,e2));
+		
+		
+		clienteRepository.saveAll(Arrays.asList(cl1, cl2, cl3));
+		enderecoRepository.saveAll(Arrays.asList(e1,e2, e3));
 	}
 }

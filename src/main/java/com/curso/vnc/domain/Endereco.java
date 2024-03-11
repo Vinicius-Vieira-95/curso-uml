@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Endereco implements Serializable {
@@ -26,23 +28,27 @@ public class Endereco implements Serializable {
 	private String bairro;
 	
 	private String cep;
-
-	private Cliente client;
 	
+	@ManyToOne
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 
 	public Endereco() {
 	}
 
 	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep,
-			Cliente client, Cidade cidade) {
+			Cliente cliente, Cidade cidade) {
 		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.cep = cep;
-		this.client = client;
+		this.cliente = cliente;
 		this.cidade = cidade;
 	}
 
@@ -95,11 +101,11 @@ public class Endereco implements Serializable {
 	}
 
 	public Cliente getClient() {
-		return client;
+		return cliente;
 	}
 
-	public void setClient(Cliente client) {
-		this.client = client;
+	public void setClient(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public static long getSerialversionuid() {

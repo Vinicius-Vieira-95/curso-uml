@@ -9,12 +9,15 @@ import java.util.Set;
 
 import com.curso.vnc.domain.enums.TipoCliente;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Cliente implements Serializable {
@@ -31,11 +34,13 @@ public class Cliente implements Serializable {
 
 	private String cpfOuCnpj;
 	
-	@Enumerated(EnumType.STRING)
 	private Integer tipo;
-
+	
+	@OneToMany(mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
-
+	
+	@ElementCollection
+	@CollectionTable(name = "TELEFONE")
 	private Set<String> telefones = new HashSet<>();
 
 	public Cliente() {
