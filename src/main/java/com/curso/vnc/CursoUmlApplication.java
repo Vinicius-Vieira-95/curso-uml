@@ -91,11 +91,10 @@ public class CursoUmlApplication implements CommandLineRunner {
 		cl3.getTelefones().addAll(Arrays.asList("123456759"));
 		
 		Endereco e1 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl1, c1);
-		Endereco e2 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl2, c2);
-		Endereco e3 = new Endereco(null, "Rua 13 de Maio", "300", "Apto 123", "Bairro", "6165478-52", cl2, c3);
+		Endereco e2 = new Endereco(null, "Domingos Olimpio", "300", "Casa 4501", "Parangaba", "6165478-52", cl2, c2);
+		Endereco e3 = new Endereco(null, "Marco Pontes", "123", "Casa 7888", "Pq Veras", "6165478-52", cl2, c3);
 		
 		cl1.getEnderecos().addAll(Arrays.asList(e1,e2));
-		
 		
 		clienteRepository.saveAll(Arrays.asList(cl1, cl2, cl3));
 		enderecoRepository.saveAll(Arrays.asList(e1,e2, e3));
