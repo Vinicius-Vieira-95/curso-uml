@@ -26,6 +26,15 @@ public class ClienteDto implements Serializable {
 
 	public ClienteDto() {
 	}
+	
+	public ClienteDto(String nome, String email, String cpfOuCnpj, String tipo, List<EnderecoDto> enderecos, Set<String> telefones) {
+		this.nome = nome;
+		this.email = email;
+		this.cpfOuCnpj = cpfOuCnpj;
+		this.tipo = tipo;
+		this.enderecos = enderecos;
+		this.telefones = telefones;
+	}
 
 	public ClienteDto(Cliente entity) {
 		this.nome = entity.getNome();

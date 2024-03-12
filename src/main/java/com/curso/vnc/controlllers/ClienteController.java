@@ -1,8 +1,10 @@
 package com.curso.vnc.controlllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.curso.vnc.domain.Categoria;
-import com.curso.vnc.domain.Cliente;
+import com.curso.vnc.domain.dto.ClienteDto;
 import com.curso.vnc.services.ClienteService;
 
 @RestController
@@ -22,9 +23,10 @@ public class ClienteController {
 	private ClienteService service;
 
 	@GetMapping
-	public List<Cliente> teste() {
-		var clientes = service.listar();
-		return clientes;
+	public ResponseEntity<Page<ClienteDto>> paginaDeClientes(
+			@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+		var clientes = service.pagina(pageable);
+		return ResponseEntity.ok(clientes);
 	}
 
 	@GetMapping(value = "/{id}")
@@ -32,9 +34,9 @@ public class ClienteController {
 		var cliente = service.buscarPorId(id);
 		return ResponseEntity.ok().body(cliente);
 	}
-	
+
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<?> delete(@PathVariable Integer id){
+	public ResponseEntity<?> delete(@PathVariable Integer id) {
 		service.delete(id);
 		return ResponseEntity.ok().build();
 	}

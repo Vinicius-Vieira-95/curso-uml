@@ -1,13 +1,12 @@
 package com.curso.vnc.services;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.curso.vnc.domain.Categoria;
 import com.curso.vnc.domain.Cliente;
-import com.curso.vnc.domain.dto.CategoriaDto;
 import com.curso.vnc.domain.dto.ClienteDto;
-import com.curso.vnc.repositories.CategoriaRepository;
 import com.curso.vnc.repositories.ClienteRepository;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
@@ -16,5 +15,10 @@ public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepositor
 
 	public ClienteService(ClienteRepository repository, ModelMapper mapper) {
 		super(repository, mapper, ClienteDto.class);
+	}
+	
+	public Page<ClienteDto> pagina(Pageable pageable) {
+		var page = repository.paginaCliente(pageable);
+		return page;
 	}
 }
