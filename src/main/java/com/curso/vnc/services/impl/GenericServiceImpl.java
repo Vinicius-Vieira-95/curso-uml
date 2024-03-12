@@ -41,8 +41,8 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 
 	@Override
 	public DTO buscarPorId(Integer id) {
-		var cat = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Classe não encontrada, objeto retornando nulo"));
-		return mapper.map(cat, dtoClass);
+		var obj = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Classe não encontrada, objeto retornando nulo"));
+		return mapper.map(obj, dtoClass);
 	}
 
 }
