@@ -1,6 +1,8 @@
 package com.curso.vnc.domain.enums;
 
-public enum TipoCliente {
+import java.io.Serializable;
+
+public enum TipoCliente implements Serializable {
 	
 	PESSOAFISICA(1,"PESSOA_FISICA"),
 	PESSOAJURIDICA(2, "PESSOA_JURIDICA");
@@ -34,5 +36,20 @@ public enum TipoCliente {
 		}
 		
 		throw new IllegalArgumentException("Id inválido " + cod);
+	}
+	
+	public static int toString(String tipo) {
+		if(tipo == null) {
+			return 0;
+		}
+		
+		for(TipoCliente x : TipoCliente.values()) {
+			if(tipo.equals(x.getDescricao())) {
+				return x.getCod();
+			}
+		}
+		
+		throw new IllegalArgumentException("Id inválido " + tipo);
+		
 	}
 }

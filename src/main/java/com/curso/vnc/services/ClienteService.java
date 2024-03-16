@@ -14,7 +14,7 @@ import com.curso.vnc.services.impl.GenericServiceImpl;
 public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepository, ClienteDto>{
 
 	public ClienteService(ClienteRepository repository, ModelMapper mapper) {
-		super(repository, mapper, ClienteDto.class);
+		super(repository, mapper, Cliente.class, ClienteDto.class);
 	}
 	
 	public Page<ClienteDto> pagina(Pageable pageable) {

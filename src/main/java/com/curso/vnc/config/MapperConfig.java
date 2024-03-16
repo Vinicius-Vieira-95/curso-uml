@@ -20,8 +20,7 @@ public class MapperConfig {
 		
 		mapper.createTypeMap(Produto.class, ProdutoDto.class);
 		mapper.createTypeMap(ProdutoDto.class, Produto.class);
-		mapper.createTypeMap(Cliente.class, ClienteDto.class)
-		.addMapping(Cliente::getTipo, ClienteDto::setTipo);
+		mapper.createTypeMap(Cliente.class, ClienteDto.class);
 		
 		mapper.createTypeMap(ClienteDto.class, Cliente.class);
 		mapper.createTypeMap(Endereco.class, EnderecoDto.class);

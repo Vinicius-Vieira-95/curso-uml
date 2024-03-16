@@ -5,7 +5,7 @@ import java.util.List;
 public interface GenericService<T, DTO> {
 	
 	List<T>listar();
-	T inserir(T entity);
+	DTO inserir(DTO entity);
 	void delete(Integer id);
 	DTO buscarPorId(Integer id);
 }

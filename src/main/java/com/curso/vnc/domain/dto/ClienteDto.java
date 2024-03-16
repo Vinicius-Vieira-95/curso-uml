@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.curso.vnc.domain.Cliente;
+import com.curso.vnc.domain.enums.TipoCliente;
 
 public class ClienteDto implements Serializable {
 
@@ -73,8 +74,8 @@ public class ClienteDto implements Serializable {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipo(TipoCliente tipo) {
+		this.tipo = tipo.getDescricao();
 	}
 
 	public List<EnderecoDto> getEnderecos() {
