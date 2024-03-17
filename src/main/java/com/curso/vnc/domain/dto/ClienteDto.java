@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.curso.vnc.domain.Cliente;
+import com.curso.vnc.domain.enums.TipoCliente;
 
 import jakarta.validation.constraints.NotBlank;
 
@@ -30,6 +31,15 @@ public class ClienteDto implements Serializable {
 	private Set<String> telefones = new HashSet<>();
 
 	public ClienteDto() {
+	}
+	
+	public ClienteDto(String nome, String email, String cpfOuCnpj, String tipo, List<EnderecoDto> enderecos, Set<String> telefones) {
+		this.nome = nome;
+		this.email = email;
+		this.cpfOuCnpj = cpfOuCnpj;
+		this.tipo = tipo;
+		this.enderecos = enderecos;
+		this.telefones = telefones;
 	}
 
 	public ClienteDto(Cliente entity) {
@@ -69,8 +79,8 @@ public class ClienteDto implements Serializable {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipo(TipoCliente tipo) {
+		this.tipo = tipo.getDescricao();
 	}
 
 	public List<EnderecoDto> getEnderecos() {

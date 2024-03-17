@@ -12,6 +12,6 @@ import com.curso.vnc.services.impl.GenericServiceImpl;
 public class CategoriaService extends GenericServiceImpl<Categoria, CategoriaRepository, CategoriaDto>{
 
 	public CategoriaService(CategoriaRepository repository, ModelMapper mapper) {
-		super(repository, mapper, CategoriaDto.class);
+		super(repository, mapper, Categoria.class, CategoriaDto.class);
 	}
 }
