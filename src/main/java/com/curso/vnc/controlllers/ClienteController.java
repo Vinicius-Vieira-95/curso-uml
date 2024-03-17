@@ -52,9 +52,4 @@ public class ClienteController {
 		return ResponseEntity.ok().build();
 	}
 	
-	@PostMapping
-	public ResponseEntity<ClienteDto> inserir(@RequestBody ClienteDto cliente){
-		var clienteSalvo = service.inserir(cliente);
-		return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
-	}
 }
