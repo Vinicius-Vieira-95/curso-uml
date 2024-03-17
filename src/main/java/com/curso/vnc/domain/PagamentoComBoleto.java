@@ -1,11 +1,10 @@
 package com.curso.vnc.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import com.curso.vnc.domain.enums.EstadoPagamento;
 
-public class PagamentoComBoleto extends Pagamento implements Serializable {
+public class PagamentoComBoleto extends Pagamento {
 
 	private static final long serialVersionUID = 1L;
 

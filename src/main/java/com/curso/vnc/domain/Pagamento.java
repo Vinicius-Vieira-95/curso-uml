@@ -5,14 +5,26 @@ import java.util.Objects;
 
 import com.curso.vnc.domain.enums.EstadoPagamento;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
+
+@Entity
 public class Pagamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
 	private Integer id;
-
+	
+	
 	private EstadoPagamento estado;
-
+	
+	@OneToOne
+	@JoinColumn(name = "pedido_id")
+	@MapsId //garante que o id do pedido seja o mesmo id do pagamento
 	private Pedido pedido;
 
 	public Pagamento() {
