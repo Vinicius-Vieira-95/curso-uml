@@ -8,16 +8,21 @@ import java.util.Set;
 
 import com.curso.vnc.domain.Cliente;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class ClienteDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@NotBlank(message = "campo nome não pode ser nulo")
 	private String nome;
 
 	private String email;
-
+	
+	@NotBlank(message = "campo cpf/cnpj não pode ser nulo")
 	private String cpfOuCnpj;
-
+	
+	@NotBlank(message = "campo tipo não pode ser nulo")
 	private String tipo;
 
 	private List<EnderecoDto> enderecos = new ArrayList<>();

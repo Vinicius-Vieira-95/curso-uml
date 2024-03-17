@@ -6,10 +6,13 @@ import java.util.List;
 
 import com.curso.vnc.domain.Categoria;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CategoriaDto implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
+	
+	@NotBlank(message = "Campo nome não pode ser nulo")
 	private String nome;
 	
 	private List<ProdutoDto> produtos = new ArrayList<>();

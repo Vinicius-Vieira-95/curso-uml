@@ -4,18 +4,25 @@ import java.io.Serializable;
 
 import com.curso.vnc.domain.Endereco;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class EnderecoDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@NotBlank(message = "campo logradouro não pode ser nulo")
 	private String logradouro;
-
+	
+	@NotBlank(message = "campo numero não pode ser nulo")
 	private String numero;
 
+	@NotBlank(message = "campo complemento não pode ser nulo")
 	private String complemento;
 
+	@NotBlank(message = "campo bairro não pode ser nulo")
 	private String bairro;
-
+	
+	@NotBlank(message = "campo cep não pode ser nulo")
 	private String cep;
 
 	public EnderecoDto() {

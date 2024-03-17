@@ -14,13 +14,21 @@ import com.curso.vnc.domain.Categoria;
 import com.curso.vnc.domain.Cliente;
 import com.curso.vnc.services.ClienteService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/clientes")
 public class ClienteController {
 
 	@Autowired
 	private ClienteService service;
-
+	
+	@PostMapping
+	public ResponseEntity<ClienteDto> inserir(@RequestBody @Valid ClienteDto cliente){
+		var clienteSalvo = service.inserir(cliente);
+		return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
+	}
+	
 	@GetMapping
 	public List<Cliente> teste() {
 		var clientes = service.listar();

@@ -2,9 +2,15 @@ package com.curso.vnc.domain.dto;
 
 import com.curso.vnc.domain.Produto;
 
-public class ProdutoDto {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
+public class ProdutoDto {
+	
+	@NotBlank(message  = "campo nome não pode ser nulo")
 	private String nome;
+	
+	@NotNull(message = "valor do preço inválido")
 	private Double preco;
 	
 	public ProdutoDto() {
