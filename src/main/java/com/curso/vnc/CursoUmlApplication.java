@@ -13,6 +13,7 @@ import com.curso.vnc.domain.Cidade;
 import com.curso.vnc.domain.Cliente;
 import com.curso.vnc.domain.Endereco;
 import com.curso.vnc.domain.Estado;
+import com.curso.vnc.domain.ItemPedido;
 import com.curso.vnc.domain.Pagamento;
 import com.curso.vnc.domain.PagamentoComBoleto;
 import com.curso.vnc.domain.PagamentoComCartao;
@@ -25,6 +26,7 @@ import com.curso.vnc.repositories.CidadeRepository;
 import com.curso.vnc.repositories.ClienteRepository;
 import com.curso.vnc.repositories.EnderecoRepository;
 import com.curso.vnc.repositories.EstadoRepository;
+import com.curso.vnc.repositories.ItemPedidoRepository;
 import com.curso.vnc.repositories.PagamentoRepository;
 import com.curso.vnc.repositories.PedidoRepository;
 import com.curso.vnc.repositories.ProdutoRepository;
@@ -55,6 +57,9 @@ public class CursoUmlApplication implements CommandLineRunner {
 
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
+	
+	@Autowired
+	private ItemPedidoRepository itemPedidoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CursoUmlApplication.class, args);
@@ -135,6 +140,18 @@ public class CursoUmlApplication implements CommandLineRunner {
 
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2, ped3));
 		pagamentoRepository.saveAll(Arrays.asList(pag1, pag2, pag3));
-
+		
+		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
+		ItemPedido ip2= new ItemPedido(ped2, p2, 0.00, 2, 80.00);
+		ItemPedido ip3 = new ItemPedido(ped3, p3, 100.00, 1, 800.00);
+		
+		ped1.getItems().addAll(Arrays.asList(ip1));
+		ped2.getItems().addAll(Arrays.asList(ip2, ip3));
+		
+		p1.getItems().addAll(Arrays.asList(ip1));
+		p2.getItems().addAll(Arrays.asList(ip3));
+		p3.getItems().addAll(Arrays.asList(ip2));
+		
+		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
 }
