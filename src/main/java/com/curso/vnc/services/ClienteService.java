@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.curso.vnc.domain.Cliente;
 import com.curso.vnc.domain.dto.ClienteDto;
+import com.curso.vnc.domain.dto.params.ClientePageDto;
 import com.curso.vnc.repositories.ClienteRepository;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
@@ -17,7 +18,7 @@ public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepositor
 		super(repository, mapper, Cliente.class, ClienteDto.class);
 	}
 	
-	public Page<ClienteDto> pagina(Pageable pageable) {
+	public Page<ClientePageDto> pagina(Pageable pageable) {
 		var page = repository.paginaCliente(pageable);
 		return page;
 	}

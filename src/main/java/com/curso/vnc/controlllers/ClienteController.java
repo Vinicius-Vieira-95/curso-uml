@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.vnc.domain.dto.ClienteDto;
+import com.curso.vnc.domain.dto.params.ClientePageDto;
 import com.curso.vnc.services.ClienteService;
 
 @RestController
@@ -26,7 +27,7 @@ public class ClienteController {
 	private ClienteService service;
 
 	@GetMapping
-	public ResponseEntity<Page<ClienteDto>> paginaDeClientes(
+	public ResponseEntity<Page<ClientePageDto>> paginaDeClientes(
 			@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
 		var clientes = service.pagina(pageable);
 		return ResponseEntity.ok(clientes);
