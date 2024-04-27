@@ -33,11 +33,11 @@ public class CategoriaController {
 		return categorias;
 	}
 	
-	@PostMapping
-	public ResponseEntity<CategoriaDto> inseri(@RequestBody @Valid CategoriaDto categoriaDto){
-		var categoriaSalva = service.inserir(categoriaDto);
-		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
-	}
+//	@PostMapping
+//	public ResponseEntity<CategoriaDto> inseri(@RequestBody @Valid CategoriaDto categoriaDto){
+//		var categoriaSalva = service.inserir(categoriaDto);
+//		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
+//	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> buscar(@PathVariable Integer id) {
