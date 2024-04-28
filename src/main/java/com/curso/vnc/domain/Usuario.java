@@ -19,6 +19,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Usuario implements UserDetails {
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
@@ -50,7 +52,7 @@ public class Usuario implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		if(this.role == Role.ADMIN) {
-			return List.of(new SimpleGrantedAuthority("ADMIN"), new SimpleGrantedAuthority("USUARIO"));
+			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USUARIO"));
 		}
 		else {
 			return List.of(new SimpleGrantedAuthority("USUARIO"));
@@ -60,7 +62,7 @@ public class Usuario implements UserDetails {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return null;
+		return senha;
 	}
 
 	@Override
