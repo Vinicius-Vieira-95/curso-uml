@@ -1,5 +1,6 @@
 package com.curso.vnc.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,10 +12,16 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import api.security.toke.FiltroDeSeguranca;
 
 @Configuration
 @EnableWebSecurity
 public class SegurancaConfig {
+	
+	@Autowired
+	FiltroDeSeguranca filtroDeSeguranca;
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
@@ -26,6 +33,7 @@ public class SegurancaConfig {
 						.requestMatchers(HttpMethod.POST, "/categorias").hasRole("ADMIN")
 						.requestMatchers(HttpMethod.GET, "/clientes").hasRole("ADMIN")
 						.anyRequest().authenticated())
+				.addFilterBefore(filtroDeSeguranca , UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
 
