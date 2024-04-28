@@ -17,8 +17,8 @@ import com.curso.vnc.domain.Usuario;
 @Service
 public class TokenConfig {
 
-	@Value("${api.security.toke.secret}")
-	private String palavraChave;
+//	@Value("${api.security.token.secret}")
+	private String palavraChave = "secret";
 
 	public String Gerartoken(Usuario usuario) {
 
@@ -51,6 +51,6 @@ public class TokenConfig {
 	}
 
 	private Instant gerarTempoExpiracao() {
-		return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-3:00"));
+		return LocalDateTime.now().plusHours(2).toInstant((ZoneOffset) ZoneOffset.systemDefault());
 	}
 }
