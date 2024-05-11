@@ -51,6 +51,6 @@ public class TokenConfig {
 	}
 
 	private Instant gerarTempoExpiracao() {
-		return LocalDateTime.now().plusHours(2).toInstant((ZoneOffset) ZoneOffset.systemDefault());
+		return LocalDateTime.now().atZone(ZoneId.systemDefault()).plusHours(2).toInstant();
 	}
 }
