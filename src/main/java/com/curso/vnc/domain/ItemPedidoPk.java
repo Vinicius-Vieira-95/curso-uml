@@ -3,6 +3,8 @@ package com.curso.vnc.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -16,10 +18,11 @@ public class ItemPedidoPk implements Serializable {
 	@JoinColumn(name = "pedido_id")
 	private Pedido pedido;
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "produto_id")
 	private Produto produto;
-
+	
 	public Pedido getPedido() {
 		return pedido;
 	}
