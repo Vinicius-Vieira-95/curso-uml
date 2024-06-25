@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.curso.vnc.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -25,6 +26,7 @@ public abstract class Pagamento implements Serializable {
 	
 	private int estado;
 	
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name = "pedido_id")
 	@MapsId //garante que o id do pedido seja o mesmo id do pagamento

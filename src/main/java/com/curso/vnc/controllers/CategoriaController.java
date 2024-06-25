@@ -1,4 +1,5 @@
-package com.curso.vnc.controllers;
+
+package com.curso.vnc.controlllers;
 
 import java.util.List;
 
@@ -32,6 +33,12 @@ public class CategoriaController {
 		var categorias = service.listar();
 		return categorias;
 	}
+	
+//	@PostMapping
+//	public ResponseEntity<CategoriaDto> inseri(@RequestBody @Valid CategoriaDto categoriaDto){
+//		var categoriaSalva = service.inserir(categoriaDto);
+//		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
+//	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> buscar(@PathVariable Integer id) {
