@@ -1,5 +1,5 @@
 
-package com.curso.vnc.controlllers;
+package com.curso.vnc.controllers;
 
 import java.util.List;
 
