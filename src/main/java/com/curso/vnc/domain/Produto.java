@@ -32,6 +32,7 @@ public class Produto implements Serializable {
 	
 	private Double preco;
 	
+	
 	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "produto_categoria", 
