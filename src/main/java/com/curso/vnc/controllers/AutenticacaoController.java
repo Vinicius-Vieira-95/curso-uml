@@ -1,11 +1,15 @@
 package com.curso.vnc.controllers;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +19,7 @@ import com.curso.vnc.domain.Usuario;
 import com.curso.vnc.domain.dto.AutenticaoDto;
 import com.curso.vnc.domain.dto.CadastroDto;
 import com.curso.vnc.domain.dto.LoginTokenDto;
+import com.curso.vnc.domain.enums.Role;
 import com.curso.vnc.repositories.UsuarioRepository;
 
 import jakarta.validation.Valid;
@@ -50,9 +55,16 @@ public class AutenticacaoController {
 		}
 
 		var senhaEnciptada = new BCryptPasswordEncoder().encode(data.senha());
-		var novoUsuario = new Usuario(data.login(), senhaEnciptada, data.role());
+		var novoUsuario = new Usuario(data.login(), senhaEnciptada, Role.USUARIO);
 		usuarioRepository.save(novoUsuario);
 
 		return ResponseEntity.ok().build();
+	}
+
+	@PutMapping("/role/{id}")
+	public ResponseEntity adcionarRole(@RequestBody @Valid CadastroDto data, @PathVariable(name = "id") UUID id) {
+		Usuario usuario = usuarioRepository.findById(id).get();
+		usuario.setRole(data.role());
+		return ResponseEntity.noContent().build();
 	}
 }
