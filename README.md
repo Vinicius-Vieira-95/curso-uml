@@ -9,6 +9,10 @@ vendo a partir de uma modelagem de dados.
 
 Também fora a parte do curso usei boas práticas no mercado utlizando spring-security, geração de logs, tratamento de execeções de acordo com os meus conhecimentos sobre o mercado.
 
+## Modelo UML 
+
+![Web 1](https://github.com/Vinicius-Vieira-95/imagens-figuras/tree/main/projeto-uml/projeto-uml.png)
+
 # Tecnologias utilizadas
 ## Back end
 - Java
