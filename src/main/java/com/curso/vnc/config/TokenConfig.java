@@ -3,7 +3,6 @@ package com.curso.vnc.config;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -17,8 +16,8 @@ import com.curso.vnc.domain.Usuario;
 @Service
 public class TokenConfig {
 
-//	@Value("${api.security.token.secret}")
-	private String palavraChave = "secret";
+	@Value("${api.security.token.secret}")
+	private String palavraChave;
 
 	public String Gerartoken(Usuario usuario) {
 
