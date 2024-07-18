@@ -19,6 +19,7 @@ Também fora a parte do curso usei boas práticas no mercado utlizando spring-se
 - Spring boot
 - Maven 
 - JPA / Hibernate
+- versão jdk-17
 
 ## Banco de dados
 - Banco de dados: Postgresql
