@@ -11,7 +11,7 @@ Também fora a parte do curso usei boas práticas no mercado utlizando spring-se
 
 ## Modelo UML 
 
-![projetouml](https://github.com/Vinicius-Vieira-95/imagens-figuras/tree/blob/main/projeto-uml/projeto-uml.png)
+![Modelos de Dados](https://github.com/Vinicius-Vieira-95/imagens-figuras/blob/main/projeto-uml/projeto-uml.png)
 
 # Tecnologias utilizadas
 ## Back end
