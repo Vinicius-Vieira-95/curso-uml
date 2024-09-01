@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.vnc</groupId>
 	<artifactId>projeto-uml</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>cursoUml</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>

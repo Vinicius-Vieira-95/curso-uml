@@ -3,6 +3,8 @@ package com.curso.vnc.services.impl;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.curso.vnc.services.exceptions.exceptions.ObjectNotFoundException;
@@ -47,5 +49,10 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 				.orElseThrow(() -> new ObjectNotFoundException("Classe não encontrada, objeto retornando nulo"));
 		return mapper.map(obj, dtoClass);
 	}
+	
+	public Page<DTO> listarPaginado(Pageable pageable) {
+        Page<T> entityPage = repository.findAll(pageable);
+        return entityPage.map(entity -> mapper.map(entity, dtoClass));
+    }
 
 }

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.vnc.domain.dto.ClienteDto;
-import com.curso.vnc.domain.dto.params.ClientePageDto;
 import com.curso.vnc.services.ClienteService;
 
 import jakarta.validation.Valid;
@@ -27,17 +26,17 @@ public class ClienteController {
 
 	@Autowired
 	private ClienteService service;
-	
+
 	@PostMapping
-	public ResponseEntity<ClienteDto> inserir(@RequestBody @Valid ClienteDto cliente){
+	public ResponseEntity<ClienteDto> inserir(@RequestBody @Valid ClienteDto cliente) {
 		var clienteSalvo = service.inserir(cliente);
 		return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
 	}
-	
+
 	@GetMapping
-	public ResponseEntity<Page<ClientePageDto>> paginaDeClientes(
+	public ResponseEntity<Page<ClienteDto>> paginaDeClientes(
 			@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
-		var clientes = service.pagina(pageable);
+		var clientes = service.listarPaginado(pageable);
 		return ResponseEntity.ok(clientes);
 	}
 
@@ -52,5 +51,5 @@ public class ClienteController {
 		service.delete(id);
 		return ResponseEntity.ok().build();
 	}
-	
+
 }
