@@ -1,4 +1,4 @@
-package com.curso.vnc.controlllers;
+package com.curso.vnc.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
