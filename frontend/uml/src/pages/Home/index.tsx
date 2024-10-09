@@ -3,7 +3,7 @@ import Footer from "../Footer"
 import "./style.css"
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../api";
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function Home() {
     const [email, setEmail] = useState('');
@@ -21,17 +21,17 @@ function Home() {
 
     function handlelogin(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault();
-        if (email == "vinicius" && senha == "123") {
-            navigate("/user");
+        const user = {
+            login: email,
+            senha: senha
         }
 
-        const login = {
-            email : email,
-            password : senha
-        }
-
-        loginUser(login).then((response) => {
-            toast.console.error();
+        loginUser(user).then((response) => {
+            if (response.status === 200) {
+                navigate("/user")
+            }
+            console.log(response.status)
+            toast.error("Error ao fazer login")
         })
     }
 

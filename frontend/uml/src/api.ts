@@ -2,13 +2,14 @@
 import axios from "axios";
 import { Login } from "./pages/types";
 
-const API_URL = "http://localhost8080";
+const API_URL = "http://localhost:8080";
 
 export function fetchLogin() {
     return axios(`${API_URL}/auth/login`)
 }
 
 export function loginUser(login: Login) {
+    console.log(login.login, login.senha)
     return axios.post(`${API_URL}/auth/login`, login);
 }
 
