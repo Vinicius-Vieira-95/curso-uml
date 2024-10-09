@@ -1,9 +1,0 @@
-package com.curso.vnc.domain.enums;
-
-public enum TipoCliente {
-	
-	PESSOAFISICA(1,"PESSOA_FISICA"),
-	PESSOAJURIDICA(2, "PESSOA_JURIDICA");
-	
-	
-}
