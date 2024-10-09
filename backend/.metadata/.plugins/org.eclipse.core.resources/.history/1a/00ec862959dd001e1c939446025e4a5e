@@ -1,0 +1,24 @@
+package com.curso.vnc.domain.enums;
+
+public enum TipoCliente {
+	
+	PESSOAFISICA(1,"PESSOA_FISICA"),
+	PESSOAJURIDICA(2, "PESSOA_JURIDICA");
+	
+	private int cod;
+	
+	private String descricao;
+
+	TipoCliente(int cod, String descricao) {
+		this.cod = cod;
+		this.descricao = descricao;
+	}
+
+	public int getCod() {
+		return cod;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+}
