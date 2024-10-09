@@ -4,6 +4,7 @@ import "./style.css"
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../api";
 import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 function Home() {
     const [email, setEmail] = useState('');
@@ -28,15 +29,20 @@ function Home() {
 
         loginUser(user).then((response) => {
             if (response.status === 200) {
+                console.log(response.data) // token
                 navigate("/user")
             }
-            console.log(response.status)
-            toast.error("Error ao fazer login")
+        }).catch((error) => {
+            // Verifica se o erro tem uma resposta do servidor
+            if (error.response.status === 403) {
+                toast.warning("login ou senha invalido")
+            }
         })
     }
 
     return (
         <>
+            <ToastContainer />
             <div className="login-container">
                 <div className="login-box">
                     <h2>Login</h2>
