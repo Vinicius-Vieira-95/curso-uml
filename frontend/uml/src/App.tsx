@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <AppRouter />
-      <ToastContainer />
+      <ToastContainer theme="dark" autoClose={10000}/>
     </>
   )
 }
