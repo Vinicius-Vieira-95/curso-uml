@@ -6,11 +6,6 @@ import { loginUser } from "../../api";
 import { toast } from 'react-toastify';
 
 
-const toastCustom = {
-    autoClose: 6000,
-    hideProgressBar: false,
-}
-
 function Home() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -40,7 +35,7 @@ function Home() {
         }).catch((error) => {
             // Verifica se o erro tem uma resposta do servidor
             if (error.response.status === 403) {
-                toast.warning("login ou senha invalido", toastCustom);
+                toast.warning("login ou senha invalido");
             }
         })
     }
