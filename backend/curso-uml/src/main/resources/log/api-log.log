@@ -1,388 +1,65 @@
-2024-10-09T16:10:17.553-03:00  INFO 14008 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 14008 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\curso-uml)
-2024-10-09T16:10:17.557-03:00 DEBUG 14008 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T16:10:17.558-03:00  INFO 14008 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T16:10:17.636-03:00  INFO 14008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-09T16:10:17.636-03:00  INFO 14008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-09T16:10:21.960-03:00  INFO 14008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T16:10:22.053-03:00  INFO 14008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 10 JPA repository interfaces.
-2024-10-09T16:10:23.173-03:00  INFO 14008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T16:10:23.185-03:00  INFO 14008 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T16:10:23.185-03:00  INFO 14008 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T16:10:23.258-03:00  INFO 14008 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T16:10:23.258-03:00  INFO 14008 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5621 ms
-2024-10-09T16:10:23.372-03:00  INFO 14008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-09T16:10:23.649-03:00  INFO 14008 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T16:10:23.650-03:00  INFO 14008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-09T16:10:23.660-03:00  INFO 14008 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T16:10:23.940-03:00  INFO 14008 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T16:10:24.016-03:00  INFO 14008 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-09T16:10:24.055-03:00  INFO 14008 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T16:10:24.332-03:00  INFO 14008 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T16:10:25.750-03:00  INFO 14008 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T16:10:26.017-03:00  INFO 14008 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T16:10:26.626-03:00 DEBUG 14008 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T16:10:26.968-03:00  INFO 14008 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-09T16:10:35.837-03:00  WARN 14008 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T16:12:20.769-03:00  INFO 14008 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4952383b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@487d689, org.springframework.security.web.context.SecurityContextHolderFilter@20dd17fc, org.springframework.security.web.header.HeaderWriterFilter@41f421c2, org.springframework.web.filter.CorsFilter@c4004a9, org.springframework.security.web.authentication.logout.LogoutFilter@592bea7c, com.curso.vnc.config.FiltroDeSeguranca@563a3fb8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@761b38d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1125e4d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bc6b2af, org.springframework.security.web.session.SessionManagementFilter@27ba1e0c, org.springframework.security.web.access.ExceptionTranslationFilter@3c3453b5, org.springframework.security.web.access.intercept.AuthorizationFilter@3fe6f52d]
-2024-10-09T16:14:01.419-03:00  INFO 14008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T16:14:06.722-03:00  INFO 14008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T16:14:07.856-03:00  INFO 14008 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 230.95 seconds (process running for 232.703)
-2024-10-09T17:08:02.691-03:00  INFO 14008 --- [RMI TCP Connection(58)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-10-09T17:08:03.280-03:00  INFO 14008 --- [RMI TCP Connection(58)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:08:03.686-03:00  WARN 14008 --- [RMI TCP Connection(58)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-10-09T17:08:03.750-03:00  INFO 14008 --- [RMI TCP Connection(58)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-09T17:08:03.782-03:00  INFO 14008 --- [RMI TCP Connection(58)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-09T17:28:59.834-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 9772 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
-2024-10-09T17:28:59.836-03:00 DEBUG 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T17:28:59.836-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T17:28:59.877-03:00  INFO 9772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-09T17:28:59.878-03:00  INFO 9772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-09T17:29:00.590-03:00  INFO 9772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T17:29:00.684-03:00  INFO 9772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 10 JPA repository interfaces.
-2024-10-09T17:29:01.451-03:00  INFO 9772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T17:29:01.460-03:00  INFO 9772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T17:29:01.462-03:00  INFO 9772 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T17:29:01.504-03:00  INFO 9772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T17:29:01.505-03:00  INFO 9772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1627 ms
-2024-10-09T17:29:01.554-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-09T17:29:01.740-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T17:29:01.748-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-09T17:29:01.758-03:00  INFO 9772 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T17:29:01.907-03:00  INFO 9772 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T17:29:01.959-03:00  INFO 9772 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-09T17:29:01.993-03:00  INFO 9772 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T17:29:02.199-03:00  INFO 9772 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T17:29:03.297-03:00  INFO 9772 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T17:29:03.369-03:00  INFO 9772 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:29:03.912-03:00 DEBUG 9772 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T17:29:04.267-03:00  INFO 9772 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-09T17:29:04.989-03:00  WARN 9772 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T17:29:05.413-03:00  INFO 9772 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5081a5a9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c142f9e, org.springframework.security.web.context.SecurityContextHolderFilter@3de283a8, org.springframework.security.web.header.HeaderWriterFilter@6866f85c, org.springframework.web.filter.CorsFilter@6dfcc9bd, org.springframework.security.web.authentication.logout.LogoutFilter@5d373001, com.curso.vnc.config.FiltroDeSeguranca@4b26e1a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38f7b9fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24fbf3d6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24aa5d5c, org.springframework.security.web.session.SessionManagementFilter@6e041b67, org.springframework.security.web.access.ExceptionTranslationFilter@738c2a40, org.springframework.security.web.access.intercept.AuthorizationFilter@5d3d9c95]
-2024-10-09T17:29:05.855-03:00  INFO 9772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T17:29:05.891-03:00  INFO 9772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T17:29:05.899-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 6.398 seconds (process running for 7.19)
-2024-10-09T17:41:25.533-03:00  INFO 9772 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-09T17:41:25.533-03:00  INFO 9772 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-09T17:41:25.535-03:00  INFO 9772 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-10-09T17:41:25.700-03:00 DEBUG 9772 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : >> cadastrar() - [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T17:41:25.701-03:00  INFO 9772 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.cadastrar(..) com argumentos: [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T17:41:25.864-03:00  INFO 9772 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.cadastrar(..)
-2024-10-09T17:41:25.865-03:00 DEBUG 9772 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : << cadastrar() - <200 OK OK,[]>
-2024-10-09T17:46:52.856-03:00 DEBUG 9772 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T17:46:52.856-03:00  INFO 9772 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T17:46:53.045-03:00  INFO 9772 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T17:46:53.046-03:00 DEBUG 9772 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : << login() - <200 OK OK,LoginTokenDto[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aW5pY2l1cy5jYXJuZWlybyIsImlzcyI6ImFwaS11bWwiLCJleHAiOjE3Mjg1MTQwMTN9.tv7nlrctTRqLtyLKeiX0tbsKyEc_IuQrmmKmhyKlMM8],[]>
-2024-10-09T17:50:06.580-03:00  INFO 9772 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (1 addition, 0 deletions, 1 modification)
-2024-10-09T17:50:06.601-03:00  INFO 9772 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:50:06.618-03:00  WARN 9772 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-10-09T17:50:06.618-03:00  INFO 9772 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-09T17:50:06.620-03:00  INFO 9772 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-09T17:50:06.939-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 9772 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
-2024-10-09T17:50:06.940-03:00 DEBUG 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T17:50:06.940-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T17:50:08.108-03:00  INFO 9772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T17:50:08.138-03:00  INFO 9772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 10 JPA repository interfaces.
-2024-10-09T17:50:08.344-03:00  INFO 9772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T17:50:08.345-03:00  INFO 9772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T17:50:08.345-03:00  INFO 9772 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T17:50:08.364-03:00  INFO 9772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T17:50:08.364-03:00  INFO 9772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1423 ms
-2024-10-09T17:50:08.408-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-10-09T17:50:08.411-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T17:50:08.411-03:00  INFO 9772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-10-09T17:50:08.411-03:00  INFO 9772 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T17:50:08.491-03:00  INFO 9772 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T17:50:08.494-03:00  INFO 9772 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T17:50:08.499-03:00  INFO 9772 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T17:50:08.692-03:00  INFO 9772 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T17:50:08.719-03:00  INFO 9772 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:50:09.068-03:00 DEBUG 9772 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T17:50:09.825-03:00  WARN 9772 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T17:50:10.113-03:00  INFO 9772 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7017a431, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5bc20197, org.springframework.security.web.context.SecurityContextHolderFilter@699e66e0, org.springframework.security.web.header.HeaderWriterFilter@53fb01cb, org.springframework.web.filter.CorsFilter@3122dcd8, org.springframework.security.web.authentication.logout.LogoutFilter@21914de1, com.curso.vnc.config.FiltroDeSeguranca@1972ff48, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@470c827a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c722609, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f984e55, org.springframework.security.web.session.SessionManagementFilter@98fd509, org.springframework.security.web.access.ExceptionTranslationFilter@3313b5fc, org.springframework.security.web.access.intercept.AuthorizationFilter@5fb228c9]
-2024-10-09T17:50:10.441-03:00  INFO 9772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T17:50:10.455-03:00  INFO 9772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T17:50:10.464-03:00  INFO 9772 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 3.554 seconds (process running for 1271.755)
-2024-10-09T17:50:10.525-03:00  INFO 9772 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-10-09T17:50:24.342-03:00  INFO 9772 --- [RMI TCP Connection(29)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-10-09T17:50:24.351-03:00  INFO 9772 --- [RMI TCP Connection(29)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:50:24.356-03:00  WARN 9772 --- [RMI TCP Connection(29)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-10-09T17:50:24.356-03:00  INFO 9772 --- [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-10-09T17:50:24.356-03:00  INFO 9772 --- [RMI TCP Connection(29)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-10-09T17:59:28.671-03:00  INFO 16108 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 16108 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
-2024-10-09T17:59:28.672-03:00 DEBUG 16108 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T17:59:28.672-03:00  INFO 16108 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T17:59:28.706-03:00  INFO 16108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-09T17:59:28.707-03:00  INFO 16108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-09T17:59:29.260-03:00  INFO 16108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T17:59:29.320-03:00  INFO 16108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 10 JPA repository interfaces.
-2024-10-09T17:59:29.932-03:00  INFO 16108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T17:59:29.942-03:00  INFO 16108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T17:59:29.942-03:00  INFO 16108 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T17:59:29.981-03:00  INFO 16108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T17:59:29.981-03:00  INFO 16108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1274 ms
-2024-10-09T17:59:30.028-03:00  INFO 16108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-09T17:59:30.170-03:00  INFO 16108 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T17:59:30.172-03:00  INFO 16108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-09T17:59:30.181-03:00  INFO 16108 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T17:59:30.310-03:00  INFO 16108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T17:59:30.354-03:00  INFO 16108 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-09T17:59:30.382-03:00  INFO 16108 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T17:59:30.556-03:00  INFO 16108 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T17:59:31.550-03:00  INFO 16108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T17:59:31.613-03:00  INFO 16108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T17:59:32.087-03:00 DEBUG 16108 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T17:59:32.453-03:00  INFO 16108 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-09T17:59:33.105-03:00  WARN 16108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T17:59:33.478-03:00  INFO 16108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1764d18a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@496e1c88, org.springframework.security.web.context.SecurityContextHolderFilter@4cca80, org.springframework.security.web.header.HeaderWriterFilter@54d0c4b4, org.springframework.web.filter.CorsFilter@423c2096, org.springframework.security.web.authentication.logout.LogoutFilter@704d445, com.curso.vnc.config.FiltroDeSeguranca@3a36e092, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6eb21642, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c61b690, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5efcb613, org.springframework.security.web.session.SessionManagementFilter@4e095743, org.springframework.security.web.access.ExceptionTranslationFilter@2d957c08, org.springframework.security.web.access.intercept.AuthorizationFilter@77ff84cf]
-2024-10-09T17:59:33.879-03:00  INFO 16108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T17:59:33.910-03:00  INFO 16108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T17:59:33.919-03:00  INFO 16108 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 5.522 seconds (process running for 6.039)
-2024-10-09T17:59:45.622-03:00  INFO 16108 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-09T17:59:45.622-03:00  INFO 16108 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-09T17:59:45.622-03:00  INFO 16108 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-10-09T17:59:45.715-03:00 DEBUG 16108 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> cadastrar() - [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T17:59:45.715-03:00  INFO 16108 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.cadastrar(..) com argumentos: [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T17:59:45.844-03:00  INFO 16108 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.cadastrar(..)
-2024-10-09T17:59:45.845-03:00 DEBUG 16108 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << cadastrar() - <200 OK OK,[]>
-2024-10-09T18:00:03.955-03:00 DEBUG 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:00:03.956-03:00  INFO 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:00:04.034-03:00 ERROR 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:00:04.034-03:00  INFO 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:00:49.289-03:00 DEBUG 16108 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:00:49.289-03:00  INFO 16108 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:00:49.291-03:00 ERROR 16108 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:00:49.292-03:00  INFO 16108 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:01:21.188-03:00 DEBUG 16108 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:01:21.188-03:00  INFO 16108 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:01:21.280-03:00  INFO 16108 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:01:21.281-03:00 DEBUG 16108 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : << login() - <200 OK OK,LoginTokenDto[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aW5pY2l1cy5jYXJuZWlybyIsImlzcyI6ImFwaS11bWwiLCJleHAiOjE3Mjg1MTQ4ODF9.29FXePFkC3VRYqdsau1XCvJi7uhfzRgDSBiD2nZvXXc],[]>
-2024-10-09T18:03:09.641-03:00 DEBUG 16108 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:03:09.641-03:00  INFO 16108 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=null, senha=null]]
-2024-10-09T18:03:09.644-03:00 ERROR 16108 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:03:09.644-03:00  INFO 16108 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:05:41.712-03:00 DEBUG 16108 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:05:41.712-03:00  INFO 16108 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:05:41.795-03:00 ERROR 16108 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : << login() - Usuário inexistente ou senha inválida
-2024-10-09T18:05:41.795-03:00  INFO 16108 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:06:09.224-03:00 DEBUG 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:06:09.224-03:00  INFO 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:06:09.301-03:00 ERROR 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << login() - Usuário inexistente ou senha inválida
-2024-10-09T18:06:09.301-03:00  INFO 16108 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:07:44.058-03:00  INFO 16108 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-10-09T18:07:44.074-03:00  INFO 16108 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T18:07:44.086-03:00  WARN 16108 --- [RMI TCP Connection(18)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-10-09T18:07:44.087-03:00  INFO 16108 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-09T18:07:44.088-03:00  INFO 16108 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-09T18:07:51.501-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 15260 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
-2024-10-09T18:07:51.503-03:00 DEBUG 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T18:07:51.504-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T18:07:51.543-03:00  INFO 15260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-09T18:07:51.543-03:00  INFO 15260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-09T18:07:52.151-03:00  INFO 15260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T18:07:52.227-03:00  INFO 15260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 10 JPA repository interfaces.
-2024-10-09T18:07:52.942-03:00  INFO 15260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T18:07:52.952-03:00  INFO 15260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T18:07:52.953-03:00  INFO 15260 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T18:07:52.996-03:00  INFO 15260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T18:07:52.997-03:00  INFO 15260 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1452 ms
-2024-10-09T18:07:53.047-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-09T18:07:53.212-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T18:07:53.214-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-09T18:07:53.225-03:00  INFO 15260 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T18:07:53.368-03:00  INFO 15260 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T18:07:53.418-03:00  INFO 15260 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-09T18:07:53.453-03:00  INFO 15260 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T18:07:53.655-03:00  INFO 15260 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T18:07:54.748-03:00  INFO 15260 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T18:07:54.819-03:00  INFO 15260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T18:07:55.342-03:00 DEBUG 15260 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T18:07:55.690-03:00  INFO 15260 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-09T18:07:56.439-03:00  WARN 15260 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T18:07:56.869-03:00  INFO 15260 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16419257, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64bea658, org.springframework.security.web.context.SecurityContextHolderFilter@477a8237, org.springframework.security.web.header.HeaderWriterFilter@350b9a50, org.springframework.web.filter.CorsFilter@1a495c57, org.springframework.security.web.authentication.logout.LogoutFilter@7576dbd, com.curso.vnc.config.FiltroDeSeguranca@264ece4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@476b569a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@415c7539, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65357717, org.springframework.security.web.session.SessionManagementFilter@321f3946, org.springframework.security.web.access.ExceptionTranslationFilter@2db1f77b, org.springframework.security.web.access.intercept.AuthorizationFilter@4836d7f7]
-2024-10-09T18:07:57.303-03:00  INFO 15260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T18:07:57.337-03:00  INFO 15260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T18:07:57.345-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 6.168 seconds (process running for 6.899)
-2024-10-09T18:08:39.790-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-09T18:08:39.790-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-09T18:08:39.791-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-10-09T18:08:39.909-03:00 DEBUG 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:08:39.910-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:09:18.220-03:00 ERROR 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:09:18.221-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:09:25.402-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> cadastrar() - [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T18:09:25.402-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.cadastrar(..) com argumentos: [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
-2024-10-09T18:09:25.486-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.cadastrar(..)
-2024-10-09T18:09:25.487-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << cadastrar() - <200 OK OK,[]>
-2024-10-09T18:09:39.832-03:00 DEBUG 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:09:39.832-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:09:52.111-03:00 ERROR 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : << login() - Usuário inexistente ou senha inválida
-2024-10-09T18:09:52.111-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:10:42.173-03:00 DEBUG 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:10:42.174-03:00  INFO 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:10:42.260-03:00  INFO 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:10:42.261-03:00 DEBUG 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : << login() - <200 OK OK,LoginTokenDto[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aW5pY2l1cy5jYXJuZWlybyIsImlzcyI6ImFwaS11bWwiLCJleHAiOjE3Mjg1MTU0NDJ9.C0537nBr8ExivMHnneQMcNqDRlXEtTCzrlNHIXRS7xY],[]>
-2024-10-09T18:11:17.667-03:00 DEBUG 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:11:17.667-03:00  INFO 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=123456]]
-2024-10-09T18:11:44.187-03:00 ERROR 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : << login() - Usuário inexistente ou senha inválida
-2024-10-09T18:11:44.187-03:00  INFO 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:12:30.485-03:00 ERROR 15260 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.userdetails.UserDetails.getAuthorities()" because "usuario" is null
-	at com.curso.vnc.config.FiltroDeSeguranca.doFilterInternal(FiltroDeSeguranca.java:38) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.4.jar:6.1.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2024-10-09T18:12:36.282-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> paginaDeClientes() - [Page request [number: 0, size 10, sort: id: ASC]]
-2024-10-09T18:12:36.282-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: ClienteController.paginaDeClientes(..) com argumentos: [Page request [number: 0, size 10, sort: id: ASC]]
-2024-10-09T18:12:36.305-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: ClienteController.paginaDeClientes(..)
-2024-10-09T18:12:36.305-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << paginaDeClientes() - <200 OK OK,Page 1 of 1 containing com.curso.vnc.domain.dto.ClienteDto instances,[]>
-2024-10-09T18:13:53.185-03:00 DEBUG 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:13:53.185-03:00  INFO 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
-2024-10-09T18:14:08.885-03:00  INFO 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:14:08.885-03:00 DEBUG 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : << login() - <200 OK OK,LoginTokenDto[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aW5pY2l1cy5jYXJuZWlybyIsImlzcyI6ImFwaS11bWwiLCJleHAiOjE3Mjg1MTU2NDh9.lR7cOP79W1FT2F4U9Z24zu9AJ7aQcI32ekhkVW0o29E],[]>
-2024-10-09T18:24:47.862-03:00  INFO 15260 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-10-09T18:24:47.879-03:00  INFO 15260 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T18:24:47.889-03:00  WARN 15260 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-10-09T18:24:47.889-03:00  INFO 15260 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-09T18:24:47.891-03:00  INFO 15260 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-09T18:24:47.996-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 15260 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
-2024-10-09T18:24:47.996-03:00 DEBUG 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
-2024-10-09T18:24:47.996-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-10-09T18:24:48.207-03:00  INFO 15260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-09T18:24:48.237-03:00  INFO 15260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 10 JPA repository interfaces.
-2024-10-09T18:24:48.517-03:00  INFO 15260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-09T18:24:48.518-03:00  INFO 15260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-09T18:24:48.518-03:00  INFO 15260 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-10-09T18:24:48.535-03:00  INFO 15260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-09T18:24:48.535-03:00  INFO 15260 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 535 ms
-2024-10-09T18:24:48.572-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-10-09T18:24:48.573-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
-2024-10-09T18:24:48.574-03:00  INFO 15260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-10-09T18:24:48.574-03:00  INFO 15260 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-10-09T18:24:48.637-03:00  INFO 15260 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-09T18:24:48.640-03:00  INFO 15260 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-09T18:24:48.645-03:00  INFO 15260 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-09T18:24:48.846-03:00  INFO 15260 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-09T18:24:48.869-03:00  INFO 15260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-09T18:24:49.189-03:00 DEBUG 15260 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
-2024-10-09T18:24:49.875-03:00  WARN 15260 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-09T18:24:50.148-03:00  INFO 15260 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37815086, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e839288, org.springframework.security.web.context.SecurityContextHolderFilter@6ba7b185, org.springframework.security.web.header.HeaderWriterFilter@538722f4, org.springframework.web.filter.CorsFilter@b80d272, org.springframework.security.web.authentication.logout.LogoutFilter@2fa6c7b1, com.curso.vnc.config.FiltroDeSeguranca@73cd0f6e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59d2c864, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33a8d128, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ee23b02, org.springframework.security.web.session.SessionManagementFilter@115b6c5f, org.springframework.security.web.access.ExceptionTranslationFilter@625a03a6, org.springframework.security.web.access.intercept.AuthorizationFilter@152c176f]
-2024-10-09T18:24:50.454-03:00  INFO 15260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-09T18:24:50.469-03:00  INFO 15260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-09T18:24:50.475-03:00  INFO 15260 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 2.53 seconds (process running for 1020.028)
-2024-10-09T18:24:50.519-03:00  INFO 15260 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-10-09T18:25:50.729-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-09T18:25:50.730-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-09T18:25:50.731-03:00  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-10-09T18:25:50.740-03:00 DEBUG 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:25:50.740-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:25:57.719-03:00 ERROR 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:25:57.719-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:28:53.913-03:00 DEBUG 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:28:53.914-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:28:53.916-03:00 ERROR 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:28:53.916-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:29:21.329-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:29:21.329-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:29:21.331-03:00 ERROR 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:29:21.332-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:27.103-03:00 DEBUG 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:27.104-03:00  INFO 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:27.105-03:00 ERROR 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:27.105-03:00  INFO 15260 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:29.520-03:00 DEBUG 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:29.520-03:00  INFO 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:29.521-03:00 ERROR 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:29.521-03:00  INFO 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:30.368-03:00 DEBUG 15260 --- [http-nio-8080-exec-9] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.368-03:00  INFO 15260 --- [http-nio-8080-exec-9] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.370-03:00 ERROR 15260 --- [http-nio-8080-exec-9] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:30.370-03:00  INFO 15260 --- [http-nio-8080-exec-9] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:30.559-03:00 DEBUG 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.559-03:00  INFO 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.560-03:00 ERROR 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:30.560-03:00  INFO 15260 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:30.791-03:00 DEBUG 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.791-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:30.793-03:00 ERROR 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:30.794-03:00  INFO 15260 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:33.959-03:00 DEBUG 15260 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:33.959-03:00  INFO 15260 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:33.961-03:00 ERROR 15260 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:33.961-03:00  INFO 15260 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:34.584-03:00 DEBUG 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:34.584-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:34.586-03:00 ERROR 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:34.586-03:00  INFO 15260 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:35.103-03:00 DEBUG 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:35.104-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:35.105-03:00 ERROR 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:35.105-03:00  INFO 15260 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:35.536-03:00 DEBUG 15260 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:35.536-03:00  INFO 15260 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:35.537-03:00 ERROR 15260 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:35.537-03:00  INFO 15260 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:30:36.175-03:00 DEBUG 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:36.175-03:00  INFO 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:30:36.178-03:00 ERROR 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
-2024-10-09T18:30:36.178-03:00  INFO 15260 --- [http-nio-8080-exec-6] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
-2024-10-09T18:33:57.186-03:00 DEBUG 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
-2024-10-09T18:33:57.186-03:00  INFO 15260 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=1234655]]
+2024-10-09T21:30:31.195-03:00  INFO 10876 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 10876 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
+2024-10-09T21:30:31.196-03:00 DEBUG 10876 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-10-09T21:30:31.197-03:00  INFO 10876 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-10-09T21:30:31.237-03:00  INFO 10876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-09T21:30:31.249-03:00  INFO 10876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-09T21:30:31.848-03:00  INFO 10876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-09T21:30:31.924-03:00  INFO 10876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 10 JPA repository interfaces.
+2024-10-09T21:30:32.684-03:00  INFO 10876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-09T21:30:32.694-03:00  INFO 10876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-09T21:30:32.694-03:00  INFO 10876 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-10-09T21:30:32.738-03:00  INFO 10876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-09T21:30:32.738-03:00  INFO 10876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1488 ms
+2024-10-09T21:30:32.789-03:00  INFO 10876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-09T21:30:32.953-03:00  INFO 10876 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-09T21:30:32.955-03:00  INFO 10876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-09T21:30:32.964-03:00  INFO 10876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-09T21:30:33.107-03:00  INFO 10876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-09T21:30:33.157-03:00  INFO 10876 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-09T21:30:33.189-03:00  INFO 10876 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-09T21:30:33.403-03:00  INFO 10876 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-09T21:30:34.512-03:00  INFO 10876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-09T21:30:34.587-03:00  INFO 10876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-09T21:30:35.122-03:00 DEBUG 10876 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
+2024-10-09T21:30:35.536-03:00  INFO 10876 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-09T21:30:36.362-03:00  WARN 10876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-09T21:30:36.803-03:00  INFO 10876 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@516a2841, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@313eaa6c, org.springframework.security.web.context.SecurityContextHolderFilter@7f49e416, org.springframework.security.web.header.HeaderWriterFilter@74b75d85, org.springframework.web.filter.CorsFilter@56840c63, org.springframework.security.web.authentication.logout.LogoutFilter@7ccd654b, com.curso.vnc.config.FiltroDeSeguranca@3e40e474, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e4ab366, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13d5c430, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d283d9d, org.springframework.security.web.session.SessionManagementFilter@7abaa351, org.springframework.security.web.access.ExceptionTranslationFilter@6bcfa179, org.springframework.security.web.access.intercept.AuthorizationFilter@7973c5c5]
+2024-10-09T21:30:37.262-03:00  INFO 10876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-10-09T21:30:37.307-03:00  INFO 10876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-09T21:30:37.317-03:00  INFO 10876 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 6.445 seconds (process running for 7.175)
+2024-10-09T21:31:05.223-03:00  INFO 10876 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-09T21:31:05.224-03:00  INFO 10876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-09T21:31:05.225-03:00  INFO 10876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-09T21:31:05.332-03:00 DEBUG 10876 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
+2024-10-09T21:31:05.332-03:00  INFO 10876 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
+2024-10-09T21:31:05.452-03:00 ERROR 10876 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:31:05.452-03:00  INFO 10876 --- [http-nio-8080-exec-2] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:39:47.372-03:00 DEBUG 10876 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=Vinicius]]
+2024-10-09T21:39:47.372-03:00  INFO 10876 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=Vinicius]]
+2024-10-09T21:39:47.375-03:00 ERROR 10876 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:39:47.375-03:00  INFO 10876 --- [http-nio-8080-exec-5] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:40:01.809-03:00 DEBUG 10876 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=Vinicius]]
+2024-10-09T21:40:01.810-03:00  INFO 10876 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=Vinicius]]
+2024-10-09T21:40:01.812-03:00 ERROR 10876 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:40:01.813-03:00  INFO 10876 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:42:55.083-03:00 DEBUG 10876 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=viviv, senha=dasdsa]]
+2024-10-09T21:42:55.084-03:00  INFO 10876 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=viviv, senha=dasdsa]]
+2024-10-09T21:42:55.087-03:00 ERROR 10876 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:42:55.088-03:00  INFO 10876 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:43:07.948-03:00 DEBUG 10876 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=, senha=]]
+2024-10-09T21:43:07.949-03:00  INFO 10876 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=, senha=]]
+2024-10-09T21:43:07.950-03:00 ERROR 10876 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:43:07.951-03:00  INFO 10876 --- [http-nio-8080-exec-8] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:44:35.556-03:00 DEBUG 10876 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=, senha=]]
+2024-10-09T21:44:35.556-03:00  INFO 10876 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=, senha=]]
+2024-10-09T21:44:35.558-03:00 ERROR 10876 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:44:35.558-03:00  INFO 10876 --- [http-nio-8080-exec-10] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:44:57.793-03:00 DEBUG 10876 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> login() - [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
+2024-10-09T21:44:57.793-03:00  INFO 10876 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.login(..) com argumentos: [AutenticaoDto[login=vinicius.carneiro, senha=12346]]
+2024-10-09T21:44:57.795-03:00 ERROR 10876 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << login() - UserDetailsService returned null, which is an interface contract violation
+2024-10-09T21:44:57.795-03:00  INFO 10876 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.login(..)
+2024-10-09T21:45:10.283-03:00  INFO 10876 --- [RMI TCP Connection(24)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-09T21:45:10.302-03:00  INFO 10876 --- [RMI TCP Connection(24)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-09T21:45:10.313-03:00  WARN 10876 --- [RMI TCP Connection(24)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-10-09T21:45:10.313-03:00  INFO 10876 --- [RMI TCP Connection(24)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-09T21:45:10.315-03:00  INFO 10876 --- [RMI TCP Connection(24)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
