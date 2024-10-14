@@ -29,7 +29,3 @@ export function loginUser(login: Login) {
 //});
 
 //export default api;
-
-//export function saveOrder(payload: OrderPayLoad){
-//   return axios.post(`${API_URL}/orders`, payload);
-//}
