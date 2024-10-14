@@ -144,3 +144,175 @@ java.lang.NullPointerException: Cannot invoke "org.springframework.security.core
 2024-10-14T10:05:39.075-03:00  WARN 8860 --- [RMI TCP Connection(7)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-10-14T10:05:39.077-03:00  INFO 8860 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-10-14T10:05:39.078-03:00  INFO 8860 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-14T10:29:48.141-03:00  INFO 13644 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 13644 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
+2024-10-14T10:29:48.143-03:00 DEBUG 13644 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-10-14T10:29:48.143-03:00  INFO 13644 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T10:29:48.183-03:00  INFO 13644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T10:29:48.184-03:00  INFO 13644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T10:29:48.767-03:00  INFO 13644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T10:29:48.843-03:00  INFO 13644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 10 JPA repository interfaces.
+2024-10-14T10:29:49.565-03:00  INFO 13644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T10:29:49.576-03:00  INFO 13644 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T10:29:49.576-03:00  INFO 13644 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-10-14T10:29:49.617-03:00  INFO 13644 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T10:29:49.617-03:00  INFO 13644 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1433 ms
+2024-10-14T10:29:49.670-03:00  INFO 13644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T10:29:49.882-03:00  INFO 13644 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-14T10:29:49.883-03:00  INFO 13644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T10:29:49.896-03:00  INFO 13644 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-14T10:29:50.048-03:00  INFO 13644 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T10:29:50.101-03:00  INFO 13644 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-14T10:29:50.133-03:00  INFO 13644 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T10:29:50.344-03:00  INFO 13644 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T10:29:51.442-03:00  INFO 13644 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T10:29:51.519-03:00  INFO 13644 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:29:52.041-03:00 DEBUG 13644 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
+2024-10-14T10:29:52.387-03:00  INFO 13644 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-14T10:30:25.537-03:00  INFO 11164 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 11164 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
+2024-10-14T10:30:25.539-03:00 DEBUG 11164 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-10-14T10:30:25.539-03:00  INFO 11164 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T10:30:25.577-03:00  INFO 11164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T10:30:25.578-03:00  INFO 11164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T10:30:26.168-03:00  INFO 11164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T10:30:26.245-03:00  INFO 11164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 10 JPA repository interfaces.
+2024-10-14T10:30:26.929-03:00  INFO 11164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T10:30:26.938-03:00  INFO 11164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T10:30:26.938-03:00  INFO 11164 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-10-14T10:30:26.992-03:00  INFO 11164 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T10:30:26.993-03:00  INFO 11164 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1414 ms
+2024-10-14T10:30:27.042-03:00  INFO 11164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T10:30:27.210-03:00  INFO 11164 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-14T10:30:27.212-03:00  INFO 11164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T10:30:27.223-03:00  INFO 11164 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-14T10:30:27.362-03:00  INFO 11164 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T10:30:27.414-03:00  INFO 11164 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-14T10:30:27.450-03:00  INFO 11164 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T10:30:27.654-03:00  INFO 11164 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T10:30:28.765-03:00  INFO 11164 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T10:30:28.841-03:00  INFO 11164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:30:29.368-03:00 DEBUG 11164 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
+2024-10-14T10:30:29.730-03:00  INFO 11164 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-14T10:30:30.416-03:00  WARN 11164 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoriaController': Unsatisfied dependency expressed through field 'service': Error creating bean with name 'categoriaService': Unsatisfied dependency expressed through field 'entityClass': No qualifying bean of type 'java.lang.Class<com.curso.vnc.domain.Categoria>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-10-14T10:30:30.417-03:00  INFO 11164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:30:30.428-03:00  WARN 11164 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-10-14T10:30:30.428-03:00  INFO 11164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-14T10:30:30.431-03:00  INFO 11164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-14T10:30:30.434-03:00  INFO 11164 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-14T10:30:30.444-03:00  INFO 11164 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-14T10:30:30.468-03:00 ERROR 11164 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field entityClass in com.curso.vnc.services.impl.GenericServiceImpl required a bean of type 'java.lang.Class' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.Class' in your configuration.
+
+2024-10-14T10:31:13.827-03:00  INFO 7824 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 7824 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
+2024-10-14T10:31:13.829-03:00 DEBUG 7824 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-10-14T10:31:13.829-03:00  INFO 7824 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T10:31:13.868-03:00  INFO 7824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T10:31:13.869-03:00  INFO 7824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T10:31:14.457-03:00  INFO 7824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T10:31:14.531-03:00  INFO 7824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 10 JPA repository interfaces.
+2024-10-14T10:31:15.220-03:00  INFO 7824 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T10:31:15.231-03:00  INFO 7824 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T10:31:15.232-03:00  INFO 7824 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-10-14T10:31:15.276-03:00  INFO 7824 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T10:31:15.276-03:00  INFO 7824 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
+2024-10-14T10:31:15.328-03:00  INFO 7824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T10:31:15.521-03:00  INFO 7824 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-14T10:31:15.522-03:00  INFO 7824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T10:31:15.532-03:00  INFO 7824 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-14T10:31:15.671-03:00  INFO 7824 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T10:31:15.728-03:00  INFO 7824 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-14T10:31:15.760-03:00  INFO 7824 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T10:31:15.959-03:00  INFO 7824 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T10:31:17.094-03:00  INFO 7824 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T10:31:17.162-03:00  INFO 7824 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:31:17.674-03:00 DEBUG 7824 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
+2024-10-14T10:31:18.018-03:00  INFO 7824 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-14T10:31:18.692-03:00  WARN 7824 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoriaController': Unsatisfied dependency expressed through field 'service': Error creating bean with name 'categoriaService': Unsatisfied dependency expressed through field 'entityClass': No qualifying bean of type 'java.lang.Class<com.curso.vnc.domain.Categoria>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-10-14T10:31:18.693-03:00  INFO 7824 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:31:18.702-03:00  WARN 7824 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-10-14T10:31:18.704-03:00  INFO 7824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-14T10:31:18.706-03:00  INFO 7824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-14T10:31:18.708-03:00  INFO 7824 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-14T10:31:18.719-03:00  INFO 7824 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-14T10:31:18.743-03:00 ERROR 7824 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field entityClass in com.curso.vnc.services.impl.GenericServiceImpl required a bean of type 'java.lang.Class' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.Class' in your configuration.
+
+2024-10-14T10:31:58.645-03:00  INFO 11932 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Starting CursoUmlApplication using Java 17.0.3 with PID 11932 (C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml\target\classes started by Pichau in C:\Users\Pichau\Desktop\Projeto\Java\curso-uml\backend\curso-uml)
+2024-10-14T10:31:58.647-03:00 DEBUG 11932 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-10-14T10:31:58.648-03:00  INFO 11932 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T10:31:58.692-03:00  INFO 11932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T10:31:58.692-03:00  INFO 11932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T10:31:59.307-03:00  INFO 11932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T10:31:59.382-03:00  INFO 11932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 10 JPA repository interfaces.
+2024-10-14T10:32:00.087-03:00  INFO 11932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T10:32:00.099-03:00  INFO 11932 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T10:32:00.100-03:00  INFO 11932 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-10-14T10:32:00.149-03:00  INFO 11932 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T10:32:00.150-03:00  INFO 11932 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1458 ms
+2024-10-14T10:32:00.197-03:00  INFO 11932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T10:32:00.358-03:00  INFO 11932 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-14T10:32:00.360-03:00  INFO 11932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T10:32:00.369-03:00  INFO 11932 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-14T10:32:00.512-03:00  INFO 11932 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T10:32:00.570-03:00  INFO 11932 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-14T10:32:00.601-03:00  INFO 11932 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T10:32:00.795-03:00  INFO 11932 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T10:32:01.907-03:00  INFO 11932 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T10:32:01.977-03:00  INFO 11932 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T10:32:02.495-03:00 DEBUG 11932 --- [restartedMain] com.curso.vnc.config.FiltroDeSeguranca   : Filter 'filtroDeSeguranca' configured for use
+2024-10-14T10:32:02.852-03:00  INFO 11932 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-14T10:32:03.592-03:00  WARN 11932 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-14T10:32:04.009-03:00  INFO 11932 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@724452f9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d2643a1, org.springframework.security.web.context.SecurityContextHolderFilter@1bfe908f, org.springframework.security.web.header.HeaderWriterFilter@3bb0de85, org.springframework.web.filter.CorsFilter@3df5a23d, org.springframework.security.web.authentication.logout.LogoutFilter@7cb65c57, com.curso.vnc.config.FiltroDeSeguranca@61e0cd1d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18e1e326, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@588ac030, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@439c4224, org.springframework.security.web.session.SessionManagementFilter@5e2e4472, org.springframework.security.web.access.ExceptionTranslationFilter@3336bbb3, org.springframework.security.web.access.intercept.AuthorizationFilter@32b84363]
+2024-10-14T10:32:04.448-03:00  INFO 11932 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-10-14T10:32:04.487-03:00  INFO 11932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-14T10:32:04.495-03:00  INFO 11932 --- [restartedMain] com.curso.vnc.CursoUmlApplication        : Started CursoUmlApplication in 6.191 seconds (process running for 6.899)
+2024-10-14T10:32:10.587-03:00  INFO 11932 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-14T10:32:10.587-03:00  INFO 11932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-14T10:32:10.588-03:00  INFO 11932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-14T10:32:10.704-03:00 DEBUG 11932 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : >> cadastrar() - [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
+2024-10-14T10:32:10.704-03:00  INFO 11932 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Entrando no método: AutenticacaoController.cadastrar(..) com argumentos: [CadastroDto[login=vinicius.carneiro, senha=12346, role=ADMIN]]
+2024-10-14T10:32:10.835-03:00  INFO 11932 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : Saindo no método: AutenticacaoController.cadastrar(..)
+2024-10-14T10:32:10.836-03:00 DEBUG 11932 --- [http-nio-8080-exec-1] com.curso.vnc.config.LogConfig           : << cadastrar() - <200 OK OK,[]>
+2024-10-14T10:32:15.823-03:00 DEBUG 11932 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : >> paginaDeClientes() - [Page request [number: 0, size 10, sort: id: ASC]]
+2024-10-14T10:32:15.824-03:00  INFO 11932 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Entrando no método: ClienteController.paginaDeClientes(..) com argumentos: [Page request [number: 0, size 10, sort: id: ASC]]
+2024-10-14T10:32:15.846-03:00  INFO 11932 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : Saindo no método: ClienteController.paginaDeClientes(..)
+2024-10-14T10:32:15.846-03:00 DEBUG 11932 --- [http-nio-8080-exec-3] com.curso.vnc.config.LogConfig           : << paginaDeClientes() - <200 OK OK,Page 1 of 1 containing com.curso.vnc.domain.dto.ClienteDto instances,[]>
+2024-10-14T10:32:20.345-03:00 DEBUG 11932 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : >> inserir() - [com.curso.vnc.domain.dto.ClienteDto@6de6098d]
+2024-10-14T10:32:20.345-03:00  INFO 11932 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Entrando no método: ClienteController.inserir(..) com argumentos: [com.curso.vnc.domain.dto.ClienteDto@6de6098d]
+2024-10-14T10:32:20.347-03:00  INFO 11932 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : Saindo no método: ClienteController.inserir(..)
+2024-10-14T10:32:20.347-03:00 DEBUG 11932 --- [http-nio-8080-exec-4] com.curso.vnc.config.LogConfig           : << inserir() - <201 CREATED Created,com.curso.vnc.domain.dto.ClienteDto@6de6098d,[]>
+2024-10-14T10:35:32.594-03:00 DEBUG 11932 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : >> paginaDeClientes() - [Page request [number: 0, size 10, sort: id: ASC]]
+2024-10-14T10:35:32.595-03:00  INFO 11932 --- [http-nio-8080-exec-7] com.curso.vnc.config.LogConfig           : Entrando no método: ClienteController.paginaDeClientes(..) com argumentos: [Page request [number: 0, size 10, sort: id: ASC]]

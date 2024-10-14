@@ -3,6 +3,7 @@ package com.curso.vnc.services.impl;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,19 +11,21 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.curso.vnc.services.exceptions.exceptions.ObjectNotFoundException;
 import com.curso.vnc.services.interfaces.GenericService;
 
-public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> implements GenericService<T, DTO> {
+public class GenericServiceImpl<T, R extends JpaRepository<T, O>, DTO, O> implements GenericService<T, DTO, O> {
 
 	protected final ModelMapper mapper;
 	protected final R repository;
 	
 	protected final Class<T> entityClass;
 	protected final Class<DTO> dtoClass;
+	protected final Class<O> objClass;
 
-	public GenericServiceImpl(R repository, ModelMapper mapper, Class<T> entityClass, Class<DTO> dtoClass) {
+	public GenericServiceImpl(R repository, ModelMapper mapper, Class<T> entityClass, Class<DTO> dtoClass, Class<O> objClass) {
 		this.mapper = mapper;
 		this.repository = repository;
 		this.dtoClass = dtoClass;
 		this.entityClass = entityClass;
+		this.objClass = objClass;
 	}
 
 	@Override
@@ -33,7 +36,7 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 	}
 
 	@Override
-	public void delete(Integer id) {
+	public void delete(O id) {
 		repository.deleteById(id);
 	}
 
@@ -44,7 +47,7 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, Integer>, DTO> imp
 	}
 
 	@Override
-	public DTO buscarPorId(Integer id) {
+	public DTO buscarPorId(O id) {
 		var obj = repository.findById(id)
 				.orElseThrow(() -> new ObjectNotFoundException("Classe não encontrada, objeto retornando nulo"));
 		return mapper.map(obj, dtoClass);

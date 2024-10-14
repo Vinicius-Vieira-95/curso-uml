@@ -2,10 +2,10 @@ package com.curso.vnc.services.interfaces;
 
 import java.util.List;
 
-public interface GenericService<T, DTO> {
+public interface GenericService<T, DTO, O> {
 	
 	List<T>listar();
 	DTO inserir(DTO entity);
-	void delete(Integer id);
-	DTO buscarPorId(Integer id);
+	void delete(O id);
+	DTO buscarPorId(O id);
 }

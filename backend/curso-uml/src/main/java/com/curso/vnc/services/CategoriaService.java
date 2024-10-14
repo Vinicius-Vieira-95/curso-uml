@@ -9,9 +9,9 @@ import com.curso.vnc.repositories.CategoriaRepository;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
 @Service
-public class CategoriaService extends GenericServiceImpl<Categoria, CategoriaRepository, CategoriaDto>{
+public class CategoriaService extends GenericServiceImpl<Categoria, CategoriaRepository, CategoriaDto, Integer>{
 
 	public CategoriaService(CategoriaRepository repository, ModelMapper mapper) {
-		super(repository, mapper, Categoria.class, CategoriaDto.class);
+		super(repository, mapper, Categoria.class, CategoriaDto.class, Integer.class);
 	}
 }

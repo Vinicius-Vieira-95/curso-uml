@@ -9,10 +9,10 @@ import com.curso.vnc.repositories.ClienteRepository;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
 @Service
-public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepository, ClienteDto>{
+public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepository, ClienteDto, Integer>{
 
 	public ClienteService(ClienteRepository repository, ModelMapper mapper) {
-		super(repository, mapper, Cliente.class, ClienteDto.class);
+		super(repository, mapper, Cliente.class, ClienteDto.class, Integer.class);
 	}
 	
 }
