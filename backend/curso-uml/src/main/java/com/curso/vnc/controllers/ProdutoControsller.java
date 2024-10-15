@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.curso.vnc.domain.dto.CategoriaDto;
 import com.curso.vnc.domain.dto.ProdutoDto;
 import com.curso.vnc.services.ProdutoService;
 
@@ -30,7 +31,7 @@ public class ProdutoControsller {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ProdutoDto> cadastrarProduto(@RequestBody ProdutoDto produto) {
+	public ResponseEntity<ProdutoDto> cadastrarProduto(@RequestBody ProdutoDto produto, CategoriaDto categoria) {
 		var salvo = service.inserir(produto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
 	}
