@@ -1,9 +1,6 @@
 package com.curso.vnc.services.impl;
 
-import java.util.List;
-
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -42,16 +39,10 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, ID>, DTO, ID> impl
 	}
 
 	@Override
-	public List<T> listar() {
-		var objs = repository.findAll();
-		return objs;
-	}
-
-	@Override
 	public DTO buscarPorId(ID id) {
-		var obj = repository.findById(id)
+		var entity = repository.findById(id)
 				.orElseThrow(() -> new ObjectNotFoundException("Id não encontrado"));
-		return mapper.map(obj, dtoClass);
+		return mapper.map(entity, dtoClass);
 	}
 	
 	@Override
@@ -59,5 +50,12 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, ID>, DTO, ID> impl
         Page<T> entityPage = repository.findAll(pageable);
         return entityPage.map(entity -> mapper.map(entity, dtoClass));
     }
+
+	@Override
+	public void atualizar(DTO objDto, ID id) {
+		var entity = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Id não encontrado"));
+		entity = mapper.map(objDto, entityClass);
+		repository.save(entity);
+	}
 
 }

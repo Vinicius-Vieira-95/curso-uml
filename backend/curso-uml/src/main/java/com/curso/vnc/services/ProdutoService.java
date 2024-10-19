@@ -19,7 +19,7 @@ public class ProdutoService extends GenericServiceImpl<Produto, ProdutoRepositor
 		super(repository, mapper, Produto.class, ProdutoDto.class, Integer.class);
 		this.categoriaRepository = categoriaRepository;
 	}
-	
+
 	public ProdutoDto salvaProduto(ProdutoDto produto, Integer idCategoria) {
 		var cat = categoriaRepository.findById(idCategoria).orElseThrow(() -> new ObjectNotFoundException("Categoria não encontrada"));
 		var aux = this.inserir(produto);
