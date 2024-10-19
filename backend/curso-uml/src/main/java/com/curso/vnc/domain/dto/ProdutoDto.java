@@ -18,7 +18,7 @@ public class ProdutoDto {
 	public ProdutoDto() {
 	}
 
-	ProdutoDto(Produto entity){
+	public ProdutoDto(Produto entity){
 		this.id = entity.getId();
 		this.nome = entity.getNome();
 		this.preco = entity.getPreco();

@@ -8,9 +8,11 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.vnc.domain.dto.CategoriaDto;
@@ -19,7 +21,7 @@ import com.curso.vnc.services.ProdutoService;
 
 @RestController
 @RequestMapping(value = "/produtos")
-public class ProdutoControsller {
+public class ProdutoController {
 	
 	@Autowired
 	private ProdutoService service;
@@ -30,9 +32,9 @@ public class ProdutoControsller {
 		return ResponseEntity.ok().body(lista);
 	}
 	
-	@PostMapping
-	public ResponseEntity<ProdutoDto> cadastrarProduto(@RequestBody ProdutoDto produto, CategoriaDto categoria) {
-		var salvo = service.inserir(produto);
+	@PostMapping(value = "/{categoriaId}")
+	public ResponseEntity<ProdutoDto> cadastrarProduto(@RequestBody ProdutoDto produto, @PathVariable("categoriaId") Integer categoriaId) {
+		var salvo = service.salvaProduto(produto, categoriaId);
 		return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
 	}
 }

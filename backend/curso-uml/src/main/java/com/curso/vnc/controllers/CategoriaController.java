@@ -47,7 +47,7 @@ public class CategoriaController {
 	@DeleteMapping(value = "/delete/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id) {
 		service.delete(id);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.ok(HttpStatus.NO_CONTENT);
 	}
 	
 	
