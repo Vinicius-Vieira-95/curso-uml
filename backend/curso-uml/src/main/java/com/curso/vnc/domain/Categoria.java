@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,8 +25,7 @@ public class Categoria implements Serializable {
 
 	private String nome;
 	
-	@JsonIgnore
-	@ManyToMany(mappedBy = "categorias")
+	@ManyToMany(mappedBy = "categorias", fetch = FetchType.LAZY)
 	private List<Produto> produtos = new ArrayList<>();
 
 	public Categoria() {

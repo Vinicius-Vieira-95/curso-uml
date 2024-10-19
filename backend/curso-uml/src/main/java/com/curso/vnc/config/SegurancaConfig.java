@@ -28,8 +28,14 @@ public class SegurancaConfig {
 				.authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.POST, "/auth/cadastro").permitAll()
 						.requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-						.requestMatchers(HttpMethod.POST, "/categorias").hasRole("ADMIN")
-						.requestMatchers(HttpMethod.GET, "/clientes").hasRole("ADMIN")
+						.requestMatchers(HttpMethod.GET, "/categorias").permitAll()
+						.requestMatchers(HttpMethod.POST, "/categorias").permitAll()
+						.requestMatchers(HttpMethod.GET, "/clientes").permitAll()
+						.requestMatchers(HttpMethod.POST, "/clientes/*").permitAll()						
+						.requestMatchers(HttpMethod.GET, "/produtos").permitAll()
+						.requestMatchers(HttpMethod.POST, "/produtos").permitAll()
+//						.requestMatchers(HttpMethod.POST, "/categorias").hasRole("ADMIN")
+//						.requestMatchers(HttpMethod.GET, "/clientes").hasRole("ADMIN")
 						.anyRequest().authenticated())
 				.addFilterBefore(filtroDeSeguranca , UsernamePasswordAuthenticationFilter.class)
 				.build();

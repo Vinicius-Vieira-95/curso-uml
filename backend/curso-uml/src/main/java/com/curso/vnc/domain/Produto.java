@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,7 +33,6 @@ public class Produto implements Serializable {
 	
 	private Double preco;
 	
-	
 	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "produto_categoria", 
@@ -41,7 +41,7 @@ public class Produto implements Serializable {
 	private List<Categoria> categorias = new ArrayList<>();
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "id.produto")
+	@OneToMany(mappedBy = "id.produto", fetch = FetchType.LAZY)
 	private Set<ItemPedido> items = new HashSet<>();
 	
 	public Produto() {

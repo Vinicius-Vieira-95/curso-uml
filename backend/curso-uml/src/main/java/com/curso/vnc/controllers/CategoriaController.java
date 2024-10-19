@@ -1,9 +1,11 @@
 
 package com.curso.vnc.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,14 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.curso.vnc.domain.Categoria;
 import com.curso.vnc.domain.dto.CategoriaDto;
 import com.curso.vnc.services.CategoriaService;
-
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/categorias")
@@ -27,19 +25,13 @@ public class CategoriaController {
 
 	@Autowired
 	private CategoriaService service;
-
+	
 	@GetMapping
-	public List<Categoria> teste() {
-		var categorias = service.listar();
-		return categorias;
+	public ResponseEntity<Page<CategoriaDto>> paginaProdutos(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+		var lista = service.listarPaginado(pageable);
+		return ResponseEntity.ok().body(lista);
 	}
 	
-//	@PostMapping
-//	public ResponseEntity<CategoriaDto> inseri(@RequestBody @Valid CategoriaDto categoriaDto){
-//		var categoriaSalva = service.inserir(categoriaDto);
-//		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
-//	}
-
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> buscar(@PathVariable Integer id) {
 		var cat = service.buscarPorId(id);
@@ -57,4 +49,6 @@ public class CategoriaController {
 		service.delete(id);
 		return ResponseEntity.ok().build();
 	}
+	
+	
 }
