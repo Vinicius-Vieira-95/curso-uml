@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.vnc.domain.dto.ClienteDto;
+import com.curso.vnc.domain.dto.EnderecoDto;
 import com.curso.vnc.services.ClienteService;
 
 import jakarta.validation.Valid;
@@ -50,9 +51,15 @@ public class ClienteController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<ClienteDto> atualizarDados(@RequestBody ClienteDto cliente, @RequestParam("id") Integer id) {
+	public ResponseEntity<ClienteDto> atualizarDados(@RequestBody ClienteDto cliente, @PathVariable("id") Integer id) {
 		service.atualizar(cliente, id);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@PostMapping("/{id}/endereco")
+	public ResponseEntity<ClienteDto> salvarEndereco(@RequestBody EnderecoDto enderecoDto, @PathVariable("id")Integer idCliente) {
+		var cliente = service.salvarEndereco(enderecoDto, idCliente);
+		return ResponseEntity.ok(cliente);
 	}
 
 	@DeleteMapping(value = "/{id}")

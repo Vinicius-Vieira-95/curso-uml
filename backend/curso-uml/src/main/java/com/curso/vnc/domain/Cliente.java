@@ -10,6 +10,7 @@ import java.util.Set;
 import com.curso.vnc.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -36,15 +37,15 @@ public class Cliente implements Serializable {
 	private Integer tipo;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "cliente")
-	private List<Endereco> enderecos = new ArrayList<>();
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Endereco> enderecos;
 
 	@ElementCollection
 	@CollectionTable(name = "TELEFONE")
-	private Set<String> telefones = new HashSet<>();
+	private Set<String> telefones;
 	
 	@OneToMany(mappedBy = "cliente")
-	private List<Pedido> pedidos = new ArrayList<>();
+	private List<Pedido> pedidos;
 
 	public Cliente() {
 	}
@@ -55,6 +56,10 @@ public class Cliente implements Serializable {
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = tipo.getCod();
+	}
+	
+	public void salvarEndereco(Endereco endereco) {
+		enderecos.add(endereco);
 	}
 
 	public Integer getId() {
@@ -98,6 +103,9 @@ public class Cliente implements Serializable {
 	}
 
 	public List<Endereco> getEnderecos() {
+		if(this.enderecos == null) {
+			this.enderecos = new ArrayList<>();
+		}
 		return enderecos;
 	}
 
@@ -106,6 +114,9 @@ public class Cliente implements Serializable {
 	}
 
 	public Set<String> getTelefones() {
+		if(this.telefones == null) {
+			this.telefones = new HashSet<>();
+		}
 		return telefones;
 	}
 
@@ -114,6 +125,9 @@ public class Cliente implements Serializable {
 	}
 
 	public List<Pedido> getPedidos() {
+		if (this.pedidos == null) {
+			this.pedidos = new ArrayList<>();
+		}
 		return pedidos;
 	}
 
