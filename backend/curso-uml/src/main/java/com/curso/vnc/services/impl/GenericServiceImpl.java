@@ -55,7 +55,7 @@ public class GenericServiceImpl<T, R extends JpaRepository<T, ID>, DTO, ID> impl
 	public void atualizar(DTO objDto, ID id) {
 		var entity = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Id não encontrado"));
 		mapper.map(objDto, entity); 
-		var teste = repository.save(entity);
+		repository.save(entity);
 	}
 
 }

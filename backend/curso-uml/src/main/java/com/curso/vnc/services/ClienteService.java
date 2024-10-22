@@ -14,12 +14,23 @@ import com.curso.vnc.services.impl.GenericServiceImpl;
 
 @Service
 public class ClienteService extends GenericServiceImpl<Cliente, ClienteRepository, ClienteDto, Integer> {
-
-	private EnderecoRepository enderecoRepository;
+	
 
 	public ClienteService(ClienteRepository repository, ModelMapper mapper, EnderecoRepository enderecoRepository) {
 		super(repository, mapper, Cliente.class, ClienteDto.class, Integer.class);
-		this.enderecoRepository = enderecoRepository;
+	}
+	
+	@Override
+	public void atualizar(ClienteDto clienteDto, Integer id) {
+		var cliente = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
+		
+		if(!clienteDto.getEnderecos().isEmpty()) {
+			for(EnderecoDto eDto: clienteDto.getEnderecos()) {
+				System.out.println(eDto.toString());
+			}
+		}
+		
+		repository.save(cliente);
 	}
 
 	public ClienteDto salvarEndereco(EnderecoDto enderecoDto, Integer idCliente) {
