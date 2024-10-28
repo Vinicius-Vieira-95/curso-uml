@@ -33,7 +33,7 @@ public class AutenticacaoController {
 	private TokenConfig tokenConfig;
 
 	@PostMapping("/login")
-	public ResponseEntity login(@RequestBody @Valid AutenticaoDto data) {
+	public ResponseEntity<?> login(@RequestBody @Valid AutenticaoDto data) {
 		var usuarioSenha = new UsernamePasswordAuthenticationToken(data.login(), data.senha());
 		var auth = authenticationManager.authenticate(usuarioSenha);
 
@@ -43,7 +43,7 @@ public class AutenticacaoController {
 	}
 
 	@PostMapping("/cadastro")
-	public ResponseEntity cadastrar(@RequestBody @Valid CadastroDto data) {
+	public ResponseEntity<?> cadastrar(@RequestBody @Valid CadastroDto data) {
 
 		if (this.usuarioRepository.findByLogin(data.login()) != null) {
 			return ResponseEntity.badRequest().build();

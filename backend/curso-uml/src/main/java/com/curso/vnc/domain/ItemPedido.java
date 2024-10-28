@@ -3,8 +3,6 @@ package com.curso.vnc.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 
