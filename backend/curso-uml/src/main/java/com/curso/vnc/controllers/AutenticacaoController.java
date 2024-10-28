@@ -15,7 +15,7 @@ import com.curso.vnc.domain.Usuario;
 import com.curso.vnc.domain.dto.AutenticaoDto;
 import com.curso.vnc.domain.dto.CadastroDto;
 import com.curso.vnc.domain.dto.LoginTokenDto;
-import com.curso.vnc.repositories.UsuarioRepository;
+import com.curso.vnc.domain.repositories.UsuarioRepository;
 
 import jakarta.validation.Valid;
 

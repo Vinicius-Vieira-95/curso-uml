@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.curso.vnc.domain.Produto;
 import com.curso.vnc.domain.dto.ProdutoDto;
-import com.curso.vnc.repositories.CategoriaRepository;
-import com.curso.vnc.repositories.ProdutoRepository;
+import com.curso.vnc.domain.repositories.CategoriaRepository;
+import com.curso.vnc.domain.repositories.ProdutoRepository;
 import com.curso.vnc.services.exceptions.exceptions.ObjectNotFoundException;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 

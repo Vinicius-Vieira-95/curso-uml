@@ -1,4 +1,4 @@
-package com.curso.vnc.repositories;
+package com.curso.vnc.domain.repositories;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

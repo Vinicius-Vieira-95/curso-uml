@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.curso.vnc.repositories.UsuarioRepository;
+import com.curso.vnc.domain.repositories.UsuarioRepository;
 
 @Service
 public class AutorizacaoService implements UserDetailsService {

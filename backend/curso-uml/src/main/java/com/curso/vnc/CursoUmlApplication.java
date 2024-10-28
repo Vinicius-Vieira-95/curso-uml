@@ -21,15 +21,15 @@ import com.curso.vnc.domain.Pedido;
 import com.curso.vnc.domain.Produto;
 import com.curso.vnc.domain.enums.EstadoPagamento;
 import com.curso.vnc.domain.enums.TipoCliente;
-import com.curso.vnc.repositories.CategoriaRepository;
-import com.curso.vnc.repositories.CidadeRepository;
-import com.curso.vnc.repositories.ClienteRepository;
-import com.curso.vnc.repositories.EnderecoRepository;
-import com.curso.vnc.repositories.EstadoRepository;
-import com.curso.vnc.repositories.ItemPedidoRepository;
-import com.curso.vnc.repositories.PagamentoRepository;
-import com.curso.vnc.repositories.PedidoRepository;
-import com.curso.vnc.repositories.ProdutoRepository;
+import com.curso.vnc.domain.repositories.CategoriaRepository;
+import com.curso.vnc.domain.repositories.CidadeRepository;
+import com.curso.vnc.domain.repositories.ClienteRepository;
+import com.curso.vnc.domain.repositories.EnderecoRepository;
+import com.curso.vnc.domain.repositories.EstadoRepository;
+import com.curso.vnc.domain.repositories.ItemPedidoRepository;
+import com.curso.vnc.domain.repositories.PagamentoRepository;
+import com.curso.vnc.domain.repositories.PedidoRepository;
+import com.curso.vnc.domain.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursoUmlApplication implements CommandLineRunner {

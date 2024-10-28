@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.curso.vnc.domain.Categoria;
 import com.curso.vnc.domain.dto.CategoriaDto;
-import com.curso.vnc.repositories.CategoriaRepository;
+import com.curso.vnc.domain.repositories.CategoriaRepository;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
 @Service

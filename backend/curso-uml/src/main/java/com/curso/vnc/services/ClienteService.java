@@ -7,8 +7,8 @@ import com.curso.vnc.domain.Cliente;
 import com.curso.vnc.domain.Endereco;
 import com.curso.vnc.domain.dto.ClienteDto;
 import com.curso.vnc.domain.dto.EnderecoDto;
-import com.curso.vnc.repositories.ClienteRepository;
-import com.curso.vnc.repositories.EnderecoRepository;
+import com.curso.vnc.domain.repositories.ClienteRepository;
+import com.curso.vnc.domain.repositories.EnderecoRepository;
 import com.curso.vnc.services.exceptions.exceptions.ObjectNotFoundException;
 import com.curso.vnc.services.impl.GenericServiceImpl;
 
